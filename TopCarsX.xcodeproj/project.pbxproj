@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		277F6579287BF7690086C383 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F6578287BF7690086C383 /* AppDelegate.m */; };
+		277F657C287BF7690086C383 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657B287BF7690086C383 /* SceneDelegate.m */; };
+		277F657F287BF7690086C383 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657E287BF7690086C383 /* ViewController.m */; };
+		277F6582287BF7690086C383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277F6580287BF7690086C383 /* Main.storyboard */; };
+		277F6584287BF76A0086C383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277F6583287BF76A0086C383 /* Assets.xcassets */; };
+		277F6587287BF76A0086C383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277F6585287BF76A0086C383 /* LaunchScreen.storyboard */; };
+		277F658A287BF76A0086C383 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F6589287BF76A0086C383 /* main.m */; };
+		277F6594287BF76B0086C383 /* TopCarsXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F6593287BF76B0086C383 /* TopCarsXTests.m */; };
+		277F659E287BF76B0086C383 /* TopCarsXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F659D287BF76B0086C383 /* TopCarsXUITests.m */; };
+		277F65A0287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		277F6590287BF76B0086C383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277F656C287BF7690086C383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277F6573287BF7690086C383;
+			remoteInfo = TopCarsX;
+		};
+		277F659A287BF76B0086C383 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277F656C287BF7690086C383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277F6573287BF7690086C383;
+			remoteInfo = TopCarsX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		277F6574287BF7690086C383 /* TopCarsX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCarsX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		277F6577287BF7690086C383 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		277F6578287BF7690086C383 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		277F657A287BF7690086C383 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		277F657B287BF7690086C383 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		277F657D287BF7690086C383 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		277F657E287BF7690086C383 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		277F6581287BF7690086C383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		277F6583287BF76A0086C383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		277F6586287BF76A0086C383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		277F6588287BF76A0086C383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277F6589287BF76A0086C383 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		277F658F287BF76B0086C383 /* TopCarsXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopCarsXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277F6593287BF76B0086C383 /* TopCarsXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXTests.m; sourceTree = "<group>"; };
+		277F6599287BF76B0086C383 /* TopCarsXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopCarsXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277F659D287BF76B0086C383 /* TopCarsXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXUITests.m; sourceTree = "<group>"; };
+		277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		277F6571287BF7690086C383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277F658C287BF76B0086C383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277F6596287BF76B0086C383 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		277F656B287BF7690086C383 = {
+			isa = PBXGroup;
+			children = (
+				277F6576287BF7690086C383 /* TopCarsX */,
+				277F6592287BF76B0086C383 /* TopCarsXTests */,
+				277F659C287BF76B0086C383 /* TopCarsXUITests */,
+				277F6575287BF7690086C383 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		277F6575287BF7690086C383 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277F6574287BF7690086C383 /* TopCarsX.app */,
+				277F658F287BF76B0086C383 /* TopCarsXTests.xctest */,
+				277F6599287BF76B0086C383 /* TopCarsXUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		277F6576287BF7690086C383 /* TopCarsX */ = {
+			isa = PBXGroup;
+			children = (
+				277F6577287BF7690086C383 /* AppDelegate.h */,
+				277F6578287BF7690086C383 /* AppDelegate.m */,
+				277F657A287BF7690086C383 /* SceneDelegate.h */,
+				277F657B287BF7690086C383 /* SceneDelegate.m */,
+				277F657D287BF7690086C383 /* ViewController.h */,
+				277F657E287BF7690086C383 /* ViewController.m */,
+				277F6580287BF7690086C383 /* Main.storyboard */,
+				277F6583287BF76A0086C383 /* Assets.xcassets */,
+				277F6585287BF76A0086C383 /* LaunchScreen.storyboard */,
+				277F6588287BF76A0086C383 /* Info.plist */,
+				277F6589287BF76A0086C383 /* main.m */,
+			);
+			path = TopCarsX;
+			sourceTree = "<group>";
+		};
+		277F6592287BF76B0086C383 /* TopCarsXTests */ = {
+			isa = PBXGroup;
+			children = (
+				277F6593287BF76B0086C383 /* TopCarsXTests.m */,
+			);
+			path = TopCarsXTests;
+			sourceTree = "<group>";
+		};
+		277F659C287BF76B0086C383 /* TopCarsXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				277F659D287BF76B0086C383 /* TopCarsXUITests.m */,
+				277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */,
+			);
+			path = TopCarsXUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		277F6573287BF7690086C383 /* TopCarsX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277F65A3287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsX" */;
+			buildPhases = (
+				277F6570287BF7690086C383 /* Sources */,
+				277F6571287BF7690086C383 /* Frameworks */,
+				277F6572287BF7690086C383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopCarsX;
+			productName = TopCarsX;
+			productReference = 277F6574287BF7690086C383 /* TopCarsX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		277F658E287BF76B0086C383 /* TopCarsXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277F65A6287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsXTests" */;
+			buildPhases = (
+				277F658B287BF76B0086C383 /* Sources */,
+				277F658C287BF76B0086C383 /* Frameworks */,
+				277F658D287BF76B0086C383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277F6591287BF76B0086C383 /* PBXTargetDependency */,
+			);
+			name = TopCarsXTests;
+			productName = TopCarsXTests;
+			productReference = 277F658F287BF76B0086C383 /* TopCarsXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		277F6598287BF76B0086C383 /* TopCarsXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277F65A9287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsXUITests" */;
+			buildPhases = (
+				277F6595287BF76B0086C383 /* Sources */,
+				277F6596287BF76B0086C383 /* Frameworks */,
+				277F6597287BF76B0086C383 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277F659B287BF76B0086C383 /* PBXTargetDependency */,
+			);
+			name = TopCarsXUITests;
+			productName = TopCarsXUITests;
+			productReference = 277F6599287BF76B0086C383 /* TopCarsXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		277F656C287BF7690086C383 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					277F6573287BF7690086C383 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					277F658E287BF76B0086C383 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 277F6573287BF7690086C383;
+					};
+					277F6598287BF76B0086C383 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 277F6573287BF7690086C383;
+					};
+				};
+			};
+			buildConfigurationList = 277F656F287BF7690086C383 /* Build configuration list for PBXProject "TopCarsX" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 277F656B287BF7690086C383;
+			productRefGroup = 277F6575287BF7690086C383 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				277F6573287BF7690086C383 /* TopCarsX */,
+				277F658E287BF76B0086C383 /* TopCarsXTests */,
+				277F6598287BF76B0086C383 /* TopCarsXUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		277F6572287BF7690086C383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277F6587287BF76A0086C383 /* LaunchScreen.storyboard in Resources */,
+				277F6584287BF76A0086C383 /* Assets.xcassets in Resources */,
+				277F6582287BF7690086C383 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277F658D287BF76B0086C383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277F6597287BF76B0086C383 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		277F6570287BF7690086C383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277F657F287BF7690086C383 /* ViewController.m in Sources */,
+				277F6579287BF7690086C383 /* AppDelegate.m in Sources */,
+				277F658A287BF76A0086C383 /* main.m in Sources */,
+				277F657C287BF7690086C383 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277F658B287BF76B0086C383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277F6594287BF76B0086C383 /* TopCarsXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277F6595287BF76B0086C383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277F65A0287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m in Sources */,
+				277F659E287BF76B0086C383 /* TopCarsXUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		277F6591287BF76B0086C383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277F6573287BF7690086C383 /* TopCarsX */;
+			targetProxy = 277F6590287BF76B0086C383 /* PBXContainerItemProxy */;
+		};
+		277F659B287BF76B0086C383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277F6573287BF7690086C383 /* TopCarsX */;
+			targetProxy = 277F659A287BF76B0086C383 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		277F6580287BF7690086C383 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				277F6581287BF7690086C383 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		277F6585287BF76A0086C383 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				277F6586287BF76A0086C383 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		277F65A1287BF76B0086C383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		277F65A2287BF76B0086C383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		277F65A4287BF76B0086C383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TopCarsX/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artistry.multimedia.TopCarsX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		277F65A5287BF76B0086C383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TopCarsX/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artistry.multimedia.TopCarsX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		277F65A7287BF76B0086C383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artistry.multimedia.TopCarsXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopCarsX.app/TopCarsX";
+			};
+			name = Debug;
+		};
+		277F65A8287BF76B0086C383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artistry.multimedia.TopCarsXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopCarsX.app/TopCarsX";
+			};
+			name = Release;
+		};
+		277F65AA287BF76B0086C383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artistry.multimedia.TopCarsXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TopCarsX;
+			};
+			name = Debug;
+		};
+		277F65AB287BF76B0086C383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.artistry.multimedia.TopCarsXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TopCarsX;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		277F656F287BF7690086C383 /* Build configuration list for PBXProject "TopCarsX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277F65A1287BF76B0086C383 /* Debug */,
+				277F65A2287BF76B0086C383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277F65A3287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277F65A4287BF76B0086C383 /* Debug */,
+				277F65A5287BF76B0086C383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277F65A6287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277F65A7287BF76B0086C383 /* Debug */,
+				277F65A8287BF76B0086C383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277F65A9287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277F65AA287BF76B0086C383 /* Debug */,
+				277F65AB287BF76B0086C383 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 277F656C287BF7690086C383 /* Project object */;
+}
