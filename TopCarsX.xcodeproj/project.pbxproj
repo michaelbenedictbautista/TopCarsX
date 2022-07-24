@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		277F6579287BF7690086C383 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F6578287BF7690086C383 /* AppDelegate.m */; };
 		277F657C287BF7690086C383 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657B287BF7690086C383 /* SceneDelegate.m */; };
-		277F657F287BF7690086C383 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657E287BF7690086C383 /* ViewController.m */; };
+		277F657F287BF7690086C383 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657E287BF7690086C383 /* CarViewController.m */; };
 		277F6582287BF7690086C383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277F6580287BF7690086C383 /* Main.storyboard */; };
 		277F6584287BF76A0086C383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277F6583287BF76A0086C383 /* Assets.xcassets */; };
 		277F6587287BF76A0086C383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277F6585287BF76A0086C383 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,13 @@
 		277F6594287BF76B0086C383 /* TopCarsXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F6593287BF76B0086C383 /* TopCarsXTests.m */; };
 		277F659E287BF76B0086C383 /* TopCarsXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F659D287BF76B0086C383 /* TopCarsXUITests.m */; };
 		277F65A0287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */; };
+		277F65B2287C27E30086C383 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277F65B1287C27E30086C383 /* GoogleService-Info.plist */; };
+		27B66995288D7C640067EF2B /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B66994288D7C640067EF2B /* Car.m */; };
+		27B6699B288DA7BE0067EF2B /* CarsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */; };
+		27B6699E288DAFE00067EF2B /* CarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */; };
+		A8CC9D763FCB37BF4964615D /* Pods_TopCarsX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFE7E94D60B6D162D7283FB /* Pods_TopCarsX.framework */; };
+		AF2B9DA8F3C373B3D8D16D9E /* Pods_TopCarsXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */; };
+		DA34F1C319A522753D41D1A4 /* Pods_TopCarsX_TopCarsXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FD7C71736608D7FB7DE4D6 /* Pods_TopCarsX_TopCarsXUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06AE533A2289968D0CC2B00E /* Pods-TopCarsX-TopCarsXUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX-TopCarsXUITests.release.xcconfig"; path = "Target Support Files/Pods-TopCarsX-TopCarsXUITests/Pods-TopCarsX-TopCarsXUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0FD0AAF5680EE65EA7EA1994 /* Pods-TopCarsXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsXTests.debug.xcconfig"; path = "Target Support Files/Pods-TopCarsXTests/Pods-TopCarsXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		277F6574287BF7690086C383 /* TopCarsX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCarsX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277F6577287BF7690086C383 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		277F6578287BF7690086C383 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		277F657A287BF7690086C383 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		277F657B287BF7690086C383 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		277F657D287BF7690086C383 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		277F657E287BF7690086C383 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		277F657D287BF7690086C383 /* CarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
+		277F657E287BF7690086C383 /* CarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 		277F6581287BF7690086C383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		277F6583287BF76A0086C383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		277F6586287BF76A0086C383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +63,20 @@
 		277F6599287BF76B0086C383 /* TopCarsXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopCarsXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277F659D287BF76B0086C383 /* TopCarsXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXUITests.m; sourceTree = "<group>"; };
 		277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXUITestsLaunchTests.m; sourceTree = "<group>"; };
+		277F65B1287C27E30086C383 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27B66993288D7C640067EF2B /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		27B66994288D7C640067EF2B /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		27B66999288DA7BE0067EF2B /* CarsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsTableViewController.h; sourceTree = "<group>"; };
+		27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewController.m; sourceTree = "<group>"; };
+		27B6699C288DAFE00067EF2B /* CarsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsTableViewCell.h; sourceTree = "<group>"; };
+		27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewCell.m; sourceTree = "<group>"; };
+		39A75ACBA14CD064D7927CFB /* Pods-TopCarsX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX.release.xcconfig"; path = "Target Support Files/Pods-TopCarsX/Pods-TopCarsX.release.xcconfig"; sourceTree = "<group>"; };
+		3C57CAC1B0C7A0950B70CE11 /* Pods-TopCarsX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX.debug.xcconfig"; path = "Target Support Files/Pods-TopCarsX/Pods-TopCarsX.debug.xcconfig"; sourceTree = "<group>"; };
+		5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopCarsXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6429987EB2770AF6C2177C82 /* Pods-TopCarsXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsXTests.release.xcconfig"; path = "Target Support Files/Pods-TopCarsXTests/Pods-TopCarsXTests.release.xcconfig"; sourceTree = "<group>"; };
+		68FD7C71736608D7FB7DE4D6 /* Pods_TopCarsX_TopCarsXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopCarsX_TopCarsXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		997DD90BFB600832BF2B7B6D /* Pods-TopCarsX-TopCarsXUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX-TopCarsXUITests.debug.xcconfig"; path = "Target Support Files/Pods-TopCarsX-TopCarsXUITests/Pods-TopCarsX-TopCarsXUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ECFE7E94D60B6D162D7283FB /* Pods_TopCarsX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopCarsX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8CC9D763FCB37BF4964615D /* Pods_TopCarsX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2B9DA8F3C373B3D8D16D9E /* Pods_TopCarsXTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA34F1C319A522753D41D1A4 /* Pods_TopCarsX_TopCarsXUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +114,8 @@
 				277F6592287BF76B0086C383 /* TopCarsXTests */,
 				277F659C287BF76B0086C383 /* TopCarsXUITests */,
 				277F6575287BF7690086C383 /* Products */,
+				3DCBDA09BD750BC451E70C87 /* Pods */,
+				D3B67DE0D5AE35442A2FA97D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,9 +136,16 @@
 				277F6578287BF7690086C383 /* AppDelegate.m */,
 				277F657A287BF7690086C383 /* SceneDelegate.h */,
 				277F657B287BF7690086C383 /* SceneDelegate.m */,
-				277F657D287BF7690086C383 /* ViewController.h */,
-				277F657E287BF7690086C383 /* ViewController.m */,
+				277F657D287BF7690086C383 /* CarViewController.h */,
+				277F65B1287C27E30086C383 /* GoogleService-Info.plist */,
+				277F657E287BF7690086C383 /* CarViewController.m */,
+				27B66993288D7C640067EF2B /* Car.h */,
+				27B66994288D7C640067EF2B /* Car.m */,
 				277F6580287BF7690086C383 /* Main.storyboard */,
+				27B66999288DA7BE0067EF2B /* CarsTableViewController.h */,
+				27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */,
+				27B6699C288DAFE00067EF2B /* CarsTableViewCell.h */,
+				27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */,
 				277F6583287BF76A0086C383 /* Assets.xcassets */,
 				277F6585287BF76A0086C383 /* LaunchScreen.storyboard */,
 				277F6588287BF76A0086C383 /* Info.plist */,
@@ -136,6 +171,29 @@
 			path = TopCarsXUITests;
 			sourceTree = "<group>";
 		};
+		3DCBDA09BD750BC451E70C87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C57CAC1B0C7A0950B70CE11 /* Pods-TopCarsX.debug.xcconfig */,
+				39A75ACBA14CD064D7927CFB /* Pods-TopCarsX.release.xcconfig */,
+				997DD90BFB600832BF2B7B6D /* Pods-TopCarsX-TopCarsXUITests.debug.xcconfig */,
+				06AE533A2289968D0CC2B00E /* Pods-TopCarsX-TopCarsXUITests.release.xcconfig */,
+				0FD0AAF5680EE65EA7EA1994 /* Pods-TopCarsXTests.debug.xcconfig */,
+				6429987EB2770AF6C2177C82 /* Pods-TopCarsXTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3B67DE0D5AE35442A2FA97D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECFE7E94D60B6D162D7283FB /* Pods_TopCarsX.framework */,
+				68FD7C71736608D7FB7DE4D6 /* Pods_TopCarsX_TopCarsXUITests.framework */,
+				5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 277F65A3287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsX" */;
 			buildPhases = (
+				ADAB5368A6C90D7C8EEF1616 /* [CP] Check Pods Manifest.lock */,
 				277F6570287BF7690086C383 /* Sources */,
 				277F6571287BF7690086C383 /* Frameworks */,
 				277F6572287BF7690086C383 /* Resources */,
+				380FC3C2E5D5B4A022253FFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 277F65A6287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsXTests" */;
 			buildPhases = (
+				1F659B65818004C1DEA8A1D9 /* [CP] Check Pods Manifest.lock */,
 				277F658B287BF76B0086C383 /* Sources */,
 				277F658C287BF76B0086C383 /* Frameworks */,
 				277F658D287BF76B0086C383 /* Resources */,
@@ -178,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 277F65A9287BF76B0086C383 /* Build configuration list for PBXNativeTarget "TopCarsXUITests" */;
 			buildPhases = (
+				61EEB86908BA4181ACED5A0D /* [CP] Check Pods Manifest.lock */,
 				277F6595287BF76B0086C383 /* Sources */,
 				277F6596287BF76B0086C383 /* Frameworks */,
 				277F6597287BF76B0086C383 /* Resources */,
+				8D0F33718CC294131E67F342 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				277F6587287BF76A0086C383 /* LaunchScreen.storyboard in Resources */,
+				277F65B2287C27E30086C383 /* GoogleService-Info.plist in Resources */,
 				277F6584287BF76A0086C383 /* Assets.xcassets in Resources */,
 				277F6582287BF7690086C383 /* Main.storyboard in Resources */,
 			);
@@ -261,12 +325,118 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F659B65818004C1DEA8A1D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TopCarsXTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		380FC3C2E5D5B4A022253FFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopCarsX/Pods-TopCarsX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopCarsX/Pods-TopCarsX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TopCarsX/Pods-TopCarsX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61EEB86908BA4181ACED5A0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TopCarsX-TopCarsXUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D0F33718CC294131E67F342 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopCarsX-TopCarsXUITests/Pods-TopCarsX-TopCarsXUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopCarsX-TopCarsXUITests/Pods-TopCarsX-TopCarsXUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TopCarsX-TopCarsXUITests/Pods-TopCarsX-TopCarsXUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADAB5368A6C90D7C8EEF1616 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TopCarsX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		277F6570287BF7690086C383 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277F657F287BF7690086C383 /* ViewController.m in Sources */,
+				27B6699B288DA7BE0067EF2B /* CarsTableViewController.m in Sources */,
+				27B66995288D7C640067EF2B /* Car.m in Sources */,
+				27B6699E288DAFE00067EF2B /* CarsTableViewCell.m in Sources */,
+				277F657F287BF7690086C383 /* CarViewController.m in Sources */,
 				277F6579287BF7690086C383 /* AppDelegate.m in Sources */,
 				277F658A287BF76A0086C383 /* main.m in Sources */,
 				277F657C287BF7690086C383 /* SceneDelegate.m in Sources */,
@@ -437,6 +607,7 @@
 		};
 		277F65A4287BF76B0086C383 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C57CAC1B0C7A0950B70CE11 /* Pods-TopCarsX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +634,7 @@
 		};
 		277F65A5287BF76B0086C383 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39A75ACBA14CD064D7927CFB /* Pods-TopCarsX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -489,6 +661,7 @@
 		};
 		277F65A7287BF76B0086C383 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FD0AAF5680EE65EA7EA1994 /* Pods-TopCarsXTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +679,7 @@
 		};
 		277F65A8287BF76B0086C383 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6429987EB2770AF6C2177C82 /* Pods-TopCarsXTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +697,7 @@
 		};
 		277F65AA287BF76B0086C383 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 997DD90BFB600832BF2B7B6D /* Pods-TopCarsX-TopCarsXUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -538,6 +713,7 @@
 		};
 		277F65AB287BF76B0086C383 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06AE533A2289968D0CC2B00E /* Pods-TopCarsX-TopCarsXUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
