@@ -1,22 +1,26 @@
 //
-//  CarsTableViewController.m
+//  UserTableViewController.m
 //  TopCarsX
 //
-//  Created by Mike on 25/7/2022.
+//  Created by Mike on 29/7/2022.
 //
 
-#import "CarsTableViewController.h"
-#import "CarsTableViewCell.h"
-#import "CarViewController.h"
 #import "UserTableViewController.h"
+#import "CarsTableViewController.h"
+
+@interface UserTableViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 
-
-@interface CarsTableViewController ()
 
 @end
 
-@implementation CarsTableViewController
+@implementation UserTableViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,67 +31,39 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    //User * user = [[User alloc] init];
     
-    // Connect to firebase
-    self.firestore = [FIRFirestore firestore];
+    _user = [[User  alloc] init];
     
-    _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
-    
-    
-    // Create instance of CarViewController to get the stored data
-    CarViewController * carViewController = [[CarViewController alloc] init];
-    [carViewController setFirestore:[self firestore]];
-    
-    
-    // This will executed in separate thread
-    [carViewController findAll:^(NSMutableDictionary * _Nonnull dictionary) {
-        if (dictionary != nil) {
-            for (NSString * key in dictionary) {
-                [[self carsDictionary] setObject:[dictionary objectForKey:key] forKey:key];
-            }
-        
-        }
-        [[self carsTableView]reloadData];
-    }];
+    [[self user] setFirstName: @"Joe"];
+    [[self user] setLastName: @"Smith"];
+    [[self user] setEmail:@"Joe@gmail.com"];
+    [[self user] setPassword: @"12345"];
+    [[self user] setPhoto:[UIImage imageNamed:@"userPhoto"]];
+
 }
 
 #pragma mark - Table view data source
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of rows
+//    return 0;
+//}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Total number of cars found %li", [[self carsDictionary] count]);
-    return [[self carsDictionary] count];
-    
-}
-
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString * cellIdentifier = @"CarCell";
-    
-    CarsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
-    if (cell == nil) {
-        cell  = [[CarsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    NSString * carID = [[self carsDictionary] allKeys][[indexPath row] ];
-    NSLog(@"carId: %@", carID);
-    
-    NSArray * carsArray = [[self carsDictionary] allValues];
-    
-    NSDictionary * carDictionary = [carsArray objectAtIndex:[indexPath row]];
-    
-    
-    [[cell makeLabel] setText:[carDictionary objectForKey:@"make"]];
-    [[cell modelLabel]setText:[carDictionary objectForKey:@"model"]];
-    [[cell photoImageView] setImage:[UIImage imageNamed:[carDictionary objectForKey:@"photo"]]];
     
     return cell;
 }
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -132,18 +108,38 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    // Get the new view controller using [segue destinationViewController].
 //    // Pass the selected object to the new view controller.
 //    
-//    UIViewController* viewController = [segue destinationViewController];
 //    
-//    if ([viewController isKindOfClass:[CarViewController class]]) {
-//        // The destination of segue is going to CarViewController only
-//        CarViewController* carViewController = [segue destinationViewController];
+//    NSString * emailUserInput =  [[self emailTextField] text];
+//    NSString * passwordUserInput =  [[self passwordTextField] text];
+//    
+//    UITableViewController* viewController = [segue destinationViewController];
+//    
+//    if ([viewController isKindOfClass:[CarsTableViewController class]] && _user.email == emailUserInput && _user.password == passwordUserInput) {
+//        // The destination of segue is going to CarsTableViewController only
+//        CarsTableViewController* carsTableViewController = [segue destinationViewController];
+//        NSLog(@"Going to Homes Screen");
+//        //[carsTableViewController setUser:[self user]];
+//       
 //    }
+//    
 //}
 
+
+//- (IBAction)loginButton:(id)sender {
+//    CarsTableViewController* carsTableViewController = [segue destinationViewController];
+//
+//    User * user = [[User alloc] init];
+//    NSString * emailUserInput =  [[self emailTextField] text];
+//    NSString * passwordUserInput =  [[self passwordTextField] text];
+//
+//    if ([user email] == emailUserInput && [user email] == passwordUserInput ) {
+//
+//
+//    }
+//}
 
 @end

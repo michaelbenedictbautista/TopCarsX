@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273A82EE28918F4700ABF1A8 /* CarsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A82ED28918F4700ABF1A8 /* CarsCollectionViewController.m */; };
+		273A82F1289190A300ABF1A8 /* CarsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 273A82F0289190A300ABF1A8 /* CarsCollectionViewCell.m */; };
 		277F6579287BF7690086C383 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F6578287BF7690086C383 /* AppDelegate.m */; };
 		277F657C287BF7690086C383 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657B287BF7690086C383 /* SceneDelegate.m */; };
 		277F657F287BF7690086C383 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F657E287BF7690086C383 /* CarViewController.m */; };
@@ -18,9 +20,12 @@
 		277F659E287BF76B0086C383 /* TopCarsXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F659D287BF76B0086C383 /* TopCarsXUITests.m */; };
 		277F65A0287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */; };
 		277F65B2287C27E30086C383 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277F65B1287C27E30086C383 /* GoogleService-Info.plist */; };
+		27A3EAA12892E3850081E215 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3EAA02892E3850081E215 /* User.m */; };
+		27A3EAA72892ED160081E215 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A3EAA62892ED160081E215 /* UserTableViewController.m */; };
 		27B66995288D7C640067EF2B /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B66994288D7C640067EF2B /* Car.m */; };
 		27B6699B288DA7BE0067EF2B /* CarsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */; };
 		27B6699E288DAFE00067EF2B /* CarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */; };
+		27E2CC392894648700DEEA63 /* carDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 27E2CC382894648700DEEA63 /* carDefault.png */; };
 		A8CC9D763FCB37BF4964615D /* Pods_TopCarsX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFE7E94D60B6D162D7283FB /* Pods_TopCarsX.framework */; };
 		AF2B9DA8F3C373B3D8D16D9E /* Pods_TopCarsXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */; };
 		DA34F1C319A522753D41D1A4 /* Pods_TopCarsX_TopCarsXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FD7C71736608D7FB7DE4D6 /* Pods_TopCarsX_TopCarsXUITests.framework */; };
@@ -46,6 +51,10 @@
 /* Begin PBXFileReference section */
 		06AE533A2289968D0CC2B00E /* Pods-TopCarsX-TopCarsXUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX-TopCarsXUITests.release.xcconfig"; path = "Target Support Files/Pods-TopCarsX-TopCarsXUITests/Pods-TopCarsX-TopCarsXUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0FD0AAF5680EE65EA7EA1994 /* Pods-TopCarsXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsXTests.debug.xcconfig"; path = "Target Support Files/Pods-TopCarsXTests/Pods-TopCarsXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		273A82EC28918F4700ABF1A8 /* CarsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsCollectionViewController.h; sourceTree = "<group>"; };
+		273A82ED28918F4700ABF1A8 /* CarsCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsCollectionViewController.m; sourceTree = "<group>"; };
+		273A82EF289190A300ABF1A8 /* CarsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsCollectionViewCell.h; sourceTree = "<group>"; };
+		273A82F0289190A300ABF1A8 /* CarsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsCollectionViewCell.m; sourceTree = "<group>"; };
 		277F6574287BF7690086C383 /* TopCarsX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopCarsX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277F6577287BF7690086C383 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		277F6578287BF7690086C383 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,12 +73,17 @@
 		277F659D287BF76B0086C383 /* TopCarsXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXUITests.m; sourceTree = "<group>"; };
 		277F659F287BF76B0086C383 /* TopCarsXUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopCarsXUITestsLaunchTests.m; sourceTree = "<group>"; };
 		277F65B1287C27E30086C383 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27A3EA9F2892E3850081E215 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		27A3EAA02892E3850081E215 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		27A3EAA52892ED160081E215 /* UserTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		27A3EAA62892ED160081E215 /* UserTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		27B66993288D7C640067EF2B /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		27B66994288D7C640067EF2B /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		27B66999288DA7BE0067EF2B /* CarsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsTableViewController.h; sourceTree = "<group>"; };
 		27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewController.m; sourceTree = "<group>"; };
 		27B6699C288DAFE00067EF2B /* CarsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsTableViewCell.h; sourceTree = "<group>"; };
 		27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewCell.m; sourceTree = "<group>"; };
+		27E2CC382894648700DEEA63 /* carDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carDefault.png; sourceTree = "<group>"; };
 		39A75ACBA14CD064D7927CFB /* Pods-TopCarsX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX.release.xcconfig"; path = "Target Support Files/Pods-TopCarsX/Pods-TopCarsX.release.xcconfig"; sourceTree = "<group>"; };
 		3C57CAC1B0C7A0950B70CE11 /* Pods-TopCarsX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX.debug.xcconfig"; path = "Target Support Files/Pods-TopCarsX/Pods-TopCarsX.debug.xcconfig"; sourceTree = "<group>"; };
 		5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopCarsXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,20 +146,29 @@
 		277F6576287BF7690086C383 /* TopCarsX */ = {
 			isa = PBXGroup;
 			children = (
+				277F65B1287C27E30086C383 /* GoogleService-Info.plist */,
 				277F6577287BF7690086C383 /* AppDelegate.h */,
 				277F6578287BF7690086C383 /* AppDelegate.m */,
 				277F657A287BF7690086C383 /* SceneDelegate.h */,
 				277F657B287BF7690086C383 /* SceneDelegate.m */,
-				277F657D287BF7690086C383 /* CarViewController.h */,
-				277F65B1287C27E30086C383 /* GoogleService-Info.plist */,
-				277F657E287BF7690086C383 /* CarViewController.m */,
+				277F6580287BF7690086C383 /* Main.storyboard */,
+				27A3EA9F2892E3850081E215 /* User.h */,
+				27A3EAA02892E3850081E215 /* User.m */,
+				27A3EAA52892ED160081E215 /* UserTableViewController.h */,
+				27A3EAA62892ED160081E215 /* UserTableViewController.m */,
 				27B66993288D7C640067EF2B /* Car.h */,
 				27B66994288D7C640067EF2B /* Car.m */,
-				277F6580287BF7690086C383 /* Main.storyboard */,
+				277F657D287BF7690086C383 /* CarViewController.h */,
+				277F657E287BF7690086C383 /* CarViewController.m */,
+				273A82EC28918F4700ABF1A8 /* CarsCollectionViewController.h */,
+				273A82ED28918F4700ABF1A8 /* CarsCollectionViewController.m */,
 				27B66999288DA7BE0067EF2B /* CarsTableViewController.h */,
 				27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */,
 				27B6699C288DAFE00067EF2B /* CarsTableViewCell.h */,
 				27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */,
+				273A82EF289190A300ABF1A8 /* CarsCollectionViewCell.h */,
+				273A82F0289190A300ABF1A8 /* CarsCollectionViewCell.m */,
+				27E2CC382894648700DEEA63 /* carDefault.png */,
 				277F6583287BF76A0086C383 /* Assets.xcassets */,
 				277F6585287BF76A0086C383 /* LaunchScreen.storyboard */,
 				277F6588287BF76A0086C383 /* Info.plist */,
@@ -306,6 +329,7 @@
 				277F65B2287C27E30086C383 /* GoogleService-Info.plist in Resources */,
 				277F6584287BF76A0086C383 /* Assets.xcassets in Resources */,
 				277F6582287BF7690086C383 /* Main.storyboard in Resources */,
+				27E2CC392894648700DEEA63 /* carDefault.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,13 +457,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A3EAA12892E3850081E215 /* User.m in Sources */,
 				27B6699B288DA7BE0067EF2B /* CarsTableViewController.m in Sources */,
 				27B66995288D7C640067EF2B /* Car.m in Sources */,
 				27B6699E288DAFE00067EF2B /* CarsTableViewCell.m in Sources */,
 				277F657F287BF7690086C383 /* CarViewController.m in Sources */,
 				277F6579287BF7690086C383 /* AppDelegate.m in Sources */,
+				273A82EE28918F4700ABF1A8 /* CarsCollectionViewController.m in Sources */,
 				277F658A287BF76A0086C383 /* main.m in Sources */,
+				273A82F1289190A300ABF1A8 /* CarsCollectionViewCell.m in Sources */,
 				277F657C287BF7690086C383 /* SceneDelegate.m in Sources */,
+				27A3EAA72892ED160081E215 /* UserTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

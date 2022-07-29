@@ -12,18 +12,16 @@
 @property (weak, nonatomic) IBOutlet UITextField *idTextField;
 @property (weak, nonatomic) IBOutlet UITextField *makeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *modelTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *yearTextField;
 @property (weak, nonatomic) IBOutlet UITextField *transmissionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *drivetrainTextField;
 @property (weak, nonatomic) IBOutlet UITextField *engineTextField;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *ratingTextField;
-
-@property (weak, nonatomic) IBOutlet UITextField *photoTextField;
-
+//@property (weak, nonatomic) IBOutlet UITextField *photoTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *videoTextField;
+
 
 
 @end
@@ -34,11 +32,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _carScrollViewController.contentSize = CGSizeMake(317, 950);
+    
+    _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
+    
+    _carNSDictionary = [[NSDictionary alloc] init];
+    
     // connect to firebase
     self.firestore = [FIRFirestore firestore];
     
     FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
+    
     FIRQuery *query = [carsCollectionRef queryWhereField:@"make" isEqualTo:@"BMW"];
+    
     
     // validate firebase connection
     [query getDocumentsWithCompletion:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
@@ -168,7 +174,8 @@
     [[self engineTextField] setText:@""];
     [[self priceTextField] setText:@""];
     [[self ratingTextField] setText:@""];
-    [[self photoTextField] setText:@""];
+    //[[self photoTextField] setText:@""];
+    [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
     [[self videoTextField] setText:@""];
     
 }
@@ -223,6 +230,7 @@ return YES;
     
     if ([self carHasAValidId: carId]) {
         [self searchCarById:carId completeBlock:^(Car * car) {
+            
             if (car != nil) {
                 [[self makeTextField] setText:[car make]];
                 [[self modelTextField] setText:[car model]];
@@ -232,7 +240,11 @@ return YES;
                 [[self engineTextField] setText:[car engine]];
                 [[self priceTextField] setText:[car price]];
                 [[self ratingTextField] setText:[car rating]];
-                [[self photoTextField] setText:[car photo]];
+                //[[self photoTextField] setText:[car photo]];
+                //[[self photoImageView] setImage:[UIImage imageNamed:[_carsDictionary objectForKey:@"photo"]]];
+                
+                //Hardcoded
+                [[self photoImageView] setImage:[UIImage imageNamed:@"VantageImg"]];
                 [[self videoTextField] setText:[car video]];
             }
         }];

@@ -13,8 +13,12 @@
 
 //@property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) FIRFirestore *firestore;
-
+@property (strong, nonatomic) NSMutableDictionary *carsDictionary;
+@property (strong, nonatomic) NSDictionary * carNSDictionary;
 -(void) findAll: (void(^)(NSMutableDictionary *)) completion;
+
+
+@property (weak, nonatomic) IBOutlet UIScrollView *carScrollViewController;
 
 @end
 
