@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,13 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString * engine;
 @property NSString * price;
 @property NSString * rating;
-@property NSString * photo;
+@property UIImage * photo;
 @property NSString * video;
 
 -(instancetype) initWithName: (NSString*)make autoId:(NSString *) autoId
                model:(NSString *) model year:(NSString *) year transmission:(NSString *) transmission
               drivetrain:(NSString *) drivetrain engine:(NSString *) engine price:(NSString *) price
-              rating:(NSString *) rating photo:(NSString *) photo video:(NSString *) video;
+              rating:(NSString *) rating photo:(UIImage *) photo video:(NSString *) video;
 
 -(instancetype) initWithDictionary: (NSDictionary*) dictionary;
 

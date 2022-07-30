@@ -21,7 +21,8 @@
         _engine = engine;
         _price = price;
         _rating = rating;
-        _photo = photo;
+        //_photo = photo;
+        _photo = [UIImage imageNamed:photo];
         _video = video;
     }
     return self;
@@ -39,7 +40,8 @@
         _engine = dictionary[@"engine"];
         _price = dictionary[@"price"];
         _rating = dictionary[@"rating"];
-        _photo = dictionary[@"photo"];
+        //_photo = dictionary[@"photo"];
+        _photo = [UIImage imageNamed: dictionary[@"photo"]];
         _video = dictionary[@"video"];
         
     }

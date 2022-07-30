@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSDictionary * carNSDictionary;
 -(void) findAll: (void(^)(NSMutableDictionary *)) completion;
 
+-(void) query;
+
 
 @property (weak, nonatomic) IBOutlet UIScrollView *carScrollViewController;
 

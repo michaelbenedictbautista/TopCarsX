@@ -9,11 +9,11 @@
 #import "CarsTableViewCell.h"
 #import "CarViewController.h"
 #import "UserTableViewController.h"
-
+#import "CarDetailsTableViewController.h"
 
 
 @interface CarsTableViewController ()
-
+@property Car * selectedCar;
 @end
 
 @implementation CarsTableViewController
@@ -88,6 +88,20 @@
     return cell;
 }
 
+-(NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Select position all keys(autoId) and assign to selected car variable
+    NSInteger selectedRow = [indexPath row];
+    NSString* key = [[self carsDictionary] allKeys] [selectedRow];
+    NSMutableDictionary * selectedCarDictionary = [[self carsDictionary] objectForKey:key];
+    _selectedCar = [[Car alloc] initWithDictionary:selectedCarDictionary];
+    
+    NSLog(@"%@", [self selectedCar]);
+    
+    return indexPath;
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -136,14 +150,35 @@
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    // Get the new view controller using [segue destinationViewController].
 //    // Pass the selected object to the new view controller.
-//    
+//
 //    UIViewController* viewController = [segue destinationViewController];
-//    
+//
 //    if ([viewController isKindOfClass:[CarViewController class]]) {
 //        // The destination of segue is going to CarViewController only
 //        CarViewController* carViewController = [segue destinationViewController];
 //    }
 //}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    
+    if ([[segue destinationViewController] isKindOfClass:[ CarDetailsTableViewController class]]) {
+        CarDetailsTableViewController* carDetailsTableViewController = [segue destinationViewController ];
+        [carDetailsTableViewController setCar:[self selectedCar]];
+       
+    }
+}
+
+
+//- (IBAction)unwindToContactsTableViewController:(UIStoryboardSegue *)unwindSegue {
+//    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+//    // Use data from the view controller which initiated the unwind segue
+//}
+
+
 
 
 @end

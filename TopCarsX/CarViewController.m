@@ -36,6 +36,19 @@
     
     _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
     
+    CarViewController * carViewController = [[CarViewController alloc] init];
+    
+    // This will executed in separate thread
+    [self findAll:^(NSMutableDictionary * _Nonnull dictionary) {
+        if (dictionary != nil) {
+            for (NSString * key in dictionary) {
+                [[self carsDictionary] setObject:[dictionary objectForKey:key] forKey:key];
+            }
+        
+        }
+        //[[self _carViewController]reloadData];
+    }];
+    
     _carNSDictionary = [[NSDictionary alloc] init];
     
     // connect to firebase
@@ -131,13 +144,13 @@
         passed = NO;
     }
     
-    /** Validate CarPhoto*/
-    NSString* trimmedCarPhoto = [[car photo] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    //check if there is something to search for after removing the empty spaces
-    if([trimmedCarPhoto length] == 0){
-        [validationFailedMessages addObject:@"Photo is mandatory"];
-        passed = NO;
-    }
+//    /** Validate CarPhoto*/
+//    NSString* trimmedCarPhoto = [[car photo] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//    //check if there is something to search for after removing the empty spaces
+//    if([trimmedCarPhoto length] == 0){
+//        [validationFailedMessages addObject:@"Photo is mandatory"];
+//        passed = NO;
+//    }
     
     /** Validate CarVideo*/
     NSString* trimmedCarVideo = [[car video] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -244,7 +257,41 @@ return YES;
                 //[[self photoImageView] setImage:[UIImage imageNamed:[_carsDictionary objectForKey:@"photo"]]];
                 
                 //Hardcoded
-                [[self photoImageView] setImage:[UIImage imageNamed:@"VantageImg"]];
+                self.firestore = [FIRFirestore firestore];
+                
+                FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
+                
+                
+                if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual:@"GR86"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"GR86Img"]];
+                    
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual:@"296 GTB Coupe"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"296Img"]];
+                
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual:@"220i M Sport Coupe"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"220iImg"]];
+
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Vantage F1 Coupe"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"VantageImg"]];
+                    
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"911 Carrera GTS Coupe"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"911Img"]];
+                    
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Artura"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"ArturaImg"]];
+                
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Huracan"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"HuracanImg"]];
+                    
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"MC20 Coupe"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"MC20Img"]];
+                    
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Emira"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"EmiraImg"]];
+                    
+                } else [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
+                
+                
                 [[self videoTextField] setText:[car video]];
             }
         }];
@@ -260,7 +307,7 @@ return YES;
     [[self.firestore collectionWithPath:@"SportsCars"] addSnapshotListener:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
         
         if(snapshot != nil){
-            NSLog(@"Car found %li documents in the db", [snapshot count]);
+            NSLog(@"Car found!!! %li documents in the db", [snapshot count]);
             if(completion){
                 NSMutableDictionary *carsDictionary = [NSMutableDictionary new];
                 for (FIRQueryDocumentSnapshot* snap in [snapshot documents]) {
@@ -278,5 +325,113 @@ return YES;
     }];
 
 }
+
+
+
+-(BOOL) contactHasAValidCarModel: (NSString* ) carModel{
+    //remove empty spaces at the beginning and end
+    NSString* trimmedCarModel = [carModel stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    //check if there is something to search for after removing the empty spaces
+    if([trimmedCarModel length] == 0){
+        return NO;
+    }
+    return YES;
+}
+
+- (IBAction)didPressSearcByCarModel:(id)sender {
+    
+    NSString *model  = [[self modelTextField] text];
+    if ([self contactHasAValidCarModel: model]) {
+        FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath:@"SportsCars"];
+        FIRQuery *query = [carsCollectionRef queryWhereField:@"model" isEqualTo:model];
+        [query getDocumentsWithCompletion:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
+            if(error != nil){
+                NSString *message = @"Oops. Unable to find car model. Try again.";
+
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                               message:message
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+
+                [self presentViewController:alert animated:YES completion:nil];
+
+                int duration = 2; // duration in seconds
+
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                    [alert dismissViewControllerAnimated:YES completion:nil];
+                });
+            }
+            else {
+                NSLog(@"Found %li cars", [snapshot count]);
+                if([snapshot count] > 0){
+                    //FIRDocumentSnapshot *document = snapshot.documents.firstObject;
+                    for (FIRDocumentSnapshot *document in [snapshot documents]) {
+                        NSLog(@"CarId: %@", [document documentID]);
+                        NSDictionary *myCarDictionary = [document data];
+                        NSLog(@"car: %@", myCarDictionary);
+                        Car* myCar = [[Car alloc] initWithDictionary:myCarDictionary];
+                        [myCar setAutoId:[document documentID]];
+                        
+                        
+                        [[self idTextField] setText:[myCar autoId]];
+                        [[self makeTextField] setText:[myCar make]];
+                        [[self modelTextField] setText:[myCar model]];
+                        [[self yearTextField] setText:[myCar year]];
+                        [[self transmissionTextField] setText:[myCar transmission]];
+                        [[self drivetrainTextField] setText:[myCar drivetrain]];
+                        [[self engineTextField] setText:[myCar engine]];
+                        [[self priceTextField] setText:[myCar price]];
+                        [[self ratingTextField] setText:[myCar rating]];
+                        
+                        self.firestore = [FIRFirestore firestore];
+                        
+                        FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
+                        
+                        
+                        if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"GR86"] && [model isEqual:@"GR86"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"GR86Img"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Artura"] && [model isEqual:@"Artura"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"ArturaImg"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"296 GTB Coupe"] && [model isEqual:@"296 GTB Coupe"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"296Img"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"296 GTB Coupe"] && [model isEqual:@"220i M Sport Coupe"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"220iImg"]];
+                        
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Vantage F1 Coupe"] && [model isEqual:@"Vantage F1 Coupe"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"VantageImg"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"911 Carrera GTS Coupe"] && [model isEqual:@"911 Carrera GTS Coupe"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"911Img"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Huracan"] && [model isEqual:@"Huracan"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"HuracanImg"]];
+                        
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"MC20 Coupe"] && [model isEqual:@"MC20 Coupe"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"MC20Img"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Emira"] && [model isEqual:@"Emira"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"EmiraImg"]];
+                        
+                        } else [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
+  
+    
+                    }
+                        
+                    NSString * message = [NSString stringWithFormat:@"All cars matching the name: %@ where found",model];
+                    [self showUIAlertWithMessage:message andTitle:@"Car found"];
+                }else{
+                    [self showUIAlertWithMessage:@"Car model provided does not match any record in the database" andTitle:@"Search result"];
+                }
+            }
+        }];
+    }else{
+        [self showUIAlertWithMessage:@"You must enter car model on the textfield provided" andTitle:@"Search result"];
+    }
+}
+
+
+
 
 @end
