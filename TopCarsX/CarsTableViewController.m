@@ -96,7 +96,7 @@
     NSMutableDictionary * selectedCarDictionary = [[self carsDictionary] objectForKey:key];
     _selectedCar = [[Car alloc] initWithDictionary:selectedCarDictionary];
     
-    NSLog(@"%@", [self selectedCar]);
+    NSLog(@"This is the selected car %@", [self selectedCar]);
     
     return indexPath;
 }

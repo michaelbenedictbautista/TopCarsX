@@ -7,11 +7,20 @@
 
 #import <UIKit/UIKit.h>
 #import "Car.h"
+#import "CarViewController.h"
+@import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarDetailsTableViewController : UITableViewController
+
+@property (nonatomic, strong) FIRFirestore *firestore;
+
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UITextField *makeLabel;
+@property (weak, nonatomic) IBOutlet UITextField *modelLabel;
+@property (weak, nonatomic) IBOutlet UITextField *yearLabel;
+
 @property (weak, nonatomic) IBOutlet UITextField *transimissionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *drivetrainTextField;
 @property (weak, nonatomic) IBOutlet UITextField *engineTextField;
@@ -20,7 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+@property (weak, nonatomic) IBOutlet UIButton *updateButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
+
+
 @property Car * car;
+
+-(BOOL) update: (Car*) car;
+-(BOOL) delete: (Car*) car;
 
 @end
 

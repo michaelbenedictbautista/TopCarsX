@@ -36,7 +36,7 @@
     
     _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
     
-    CarViewController * carViewController = [[CarViewController alloc] init];
+    //CarViewController * carViewController = [[CarViewController alloc] init];
     
     // This will executed in separate thread
     [self findAll:^(NSMutableDictionary * _Nonnull dictionary) {
@@ -46,7 +46,7 @@
             }
         
         }
-        //[[self _carViewController]reloadData];
+        //[[self carViewController]reloadData];
     }];
     
     _carNSDictionary = [[NSDictionary alloc] init];
@@ -112,13 +112,13 @@
         passed = NO;
     }
     
-    /** Validate CarDrivetrain */
-    NSString* trimmedCarDrivetrain = [[car drivetrain] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    //check if there is something to search for after removing the empty spaces
-    if([trimmedCarDrivetrain length] == 0){
-        [validationFailedMessages addObject:@"Drivetrain is mandatory"];
-        passed = NO;
-    }
+//    /** Validate CarDrivetrain */
+//    NSString* trimmedCarDrivetrain = [[car drivetrain] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//    //check if there is something to search for after removing the empty spaces
+//    if([trimmedCarDrivetrain length] == 0){
+//        [validationFailedMessages addObject:@"Drivetrain is mandatory"];
+//        passed = NO;
+//    }
     
     /** Validate CarEngine */
     NSString* trimmedCarEngine = [[car engine] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -328,7 +328,7 @@ return YES;
 
 
 
--(BOOL) contactHasAValidCarModel: (NSString* ) carModel{
+-(BOOL) carHasAValidCarModel: (NSString* ) carModel{
     //remove empty spaces at the beginning and end
     NSString* trimmedCarModel = [carModel stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     //check if there is something to search for after removing the empty spaces
@@ -341,7 +341,8 @@ return YES;
 - (IBAction)didPressSearcByCarModel:(id)sender {
     
     NSString *model  = [[self modelTextField] text];
-    if ([self contactHasAValidCarModel: model]) {
+    
+    if ([self carHasAValidCarModel: model]) {
         FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath:@"SportsCars"];
         FIRQuery *query = [carsCollectionRef queryWhereField:@"model" isEqualTo:model];
         [query getDocumentsWithCompletion:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
@@ -389,7 +390,8 @@ return YES;
                         
                         if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"GR86"] && [model isEqual:@"GR86"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"GR86Img"]];
-                            
+
+
                         } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Artura"] && [model isEqual:@"Artura"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"ArturaImg"]];
                             
@@ -426,10 +428,46 @@ return YES;
                 }
             }
         }];
-    }else{
+    } else {
         [self showUIAlertWithMessage:@"You must enter car model on the textfield provided" andTitle:@"Search result"];
     }
 }
+
+
+-(BOOL) update: (Car*) car{
+    __block BOOL isUpdated = YES;
+    
+    //Fetch the document by using the Id
+    FIRDocumentReference *carReference = [[[self firestore] collectionWithPath:@"SportsCars"] documentWithPath:[car autoId]];
+    /**
+            To update some fields of a document without overwriting the entire document, use the update() method.
+            Else use setData with the merge property, in this case setData is recommended, I'm using update as demonstration
+    */
+    [carReference updateData:@{
+        @"make": [car make],
+        @"model": [car transmission],
+        @"year": [car year],
+        @"transmission": [car transmission],
+        @"drivetrain": [car drivetrain],
+        @"engine": [car engine],
+        @"price": [car price],
+        @"rating": [car rating],
+        //@"photo": [car photo],
+        //@"video": [car video],
+    } completion:^(NSError * _Nullable error) {
+        if(error != nil){
+            NSLog(@"Error updating car data: %@", error);
+            isUpdated = NO;
+        }else{
+            NSLog(@"Car data successfully updated");
+        }
+    }];
+    return isUpdated;
+}
+
+
+
+
 
 
 
