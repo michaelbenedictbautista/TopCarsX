@@ -163,7 +163,7 @@
     return passed;
 }
 
-//UI alery message function decalration and definition
+//UI alery message function declaration and definition
 -(void) showUIAlertWithMessage:(NSString*) message andTitle:(NSString*)title{
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -326,8 +326,6 @@ return YES;
 
 }
 
-
-
 -(BOOL) carHasAValidCarModel: (NSString* ) carModel{
     //remove empty spaces at the beginning and end
     NSString* trimmedCarModel = [carModel stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -464,12 +462,6 @@ return YES;
     }];
     return isUpdated;
 }
-
-
-
-
-
-
 
 
 @end

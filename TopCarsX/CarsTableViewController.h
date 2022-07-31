@@ -6,7 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 @import Firebase;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) FIRFirestore * firestore;
 @property (strong, nonatomic) NSMutableDictionary *carsDictionary;
 @property (strong, nonatomic) IBOutlet UITableView *carsTableView;
-
+@property User * user;
 @end
 
 NS_ASSUME_NONNULL_END

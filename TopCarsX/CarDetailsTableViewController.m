@@ -114,6 +114,11 @@
 // action for edit icon
 - (IBAction)didPressEdit:(id)sender {
     
+    [self textFieldEnabled];
+}
+
+// Function disable textField
+-(void) textFieldEnabled{
     [[self transimissionTextField] setEnabled:TRUE];
     [[self transimissionTextField] setBorderStyle:UITextBorderStyleBezel];
     [[self transimissionTextField] becomeFirstResponder];
@@ -124,9 +129,20 @@
     [[self ratingTextField] setEnabled:TRUE];
     
     [[self updateButton] setEnabled:TRUE];
+}
+
+// Function enable textField
+-(void) textFieldDisabled{
+    [[self transimissionTextField] setEnabled:FALSE];
+    [[self transimissionTextField] setBorderStyle:UITextBorderStyleNone];
     
     
+    [[self drivetrainTextField] setEnabled:FALSE];
+    [[self engineTextField] setEnabled:FALSE];
+    [[self priceTextField] setEnabled:FALSE];
+    [[self ratingTextField] setEnabled:FALSE];
     
+    [[self updateButton] setEnabled:FALSE];
 }
 
 // Validate for update
@@ -160,9 +176,6 @@
     }];
     return isUpdated;
 }
-
-
-
 
 // Action button for update
 - (IBAction)didPressUpdate:(id)sender {
@@ -233,6 +246,7 @@
                             
                             if ([self update:updatedCar]) {
                                 NSLog(@"Successfully updated!");
+                                [self textFieldDisabled];
                             }else {
                                 NSLog(@"Unsuccessful! Try again.");
                             }
@@ -251,7 +265,6 @@
         
 
 //Validate for delete
-
 -(BOOL) delete: (Car *) car {
     __block BOOL isDeleted = YES;
     
@@ -269,6 +282,7 @@
     
 }
 
+// Action delete button
 - (IBAction)didPressDelete:(id)sender {
     
     NSString * model  = [[self modelLabel] text];

@@ -18,14 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString* password;
 @property UIImage* photo;
 
-//- (instancetype)initWithName: (NSString*) firstName
-//                       lastName: (NSString*) lastName
-//                       email: (NSString*) email
-//                    password: (NSString*) password
-//                       photo: (UIImage*) photo;
-//-(BOOL) isValid;
-
-
 @end
 
 NS_ASSUME_NONNULL_END

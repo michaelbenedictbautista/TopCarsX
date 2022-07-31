@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL) update: (Car*) car;
 -(BOOL) delete: (Car*) car;
 
+-(void) textFieldDEnabled;
+-(void) textFieldDisabled;
+
 @end
 
 NS_ASSUME_NONNULL_END
