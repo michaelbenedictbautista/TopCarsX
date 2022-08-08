@@ -10,6 +10,7 @@
 #import "CarViewController.h"
 #import "UserViewController.h"
 #import "CarDetailsTableViewController.h"
+#import "CarVideoTableViewController.h"
 
 
 @interface CarsTableViewController ()
@@ -49,6 +50,11 @@
         }
         [[self carsTableView]reloadData];
     }];
+    
+//    cell.yourImageView.layer.cornerRadius = cell.yourImageView.frame.size.height /2;
+//    cell.yourImageView.layer.masksToBounds = YES;
+//    cell.yourImageView.layer.borderWidth = 0;
+    
 }
 
 #pragma mark - Table view data source
@@ -79,6 +85,8 @@
     NSArray * carsArray = [[self carsDictionary] allValues];
     
     NSDictionary * carDictionary = [carsArray objectAtIndex:[indexPath row]];
+    
+//    NSDictionary * sampleDictionary = [self carsDictionary] setObject:<#(nonnull id)#> forKey:<#(nonnull id<NSCopying>)#>
     
     
     [[cell makeLabel] setText:[carDictionary objectForKey:@"make"]];
@@ -164,19 +172,28 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    
     if ([[segue destinationViewController] isKindOfClass:[ CarDetailsTableViewController class]]) {
         CarDetailsTableViewController* carDetailsTableViewController = [segue destinationViewController ];
         [carDetailsTableViewController setCar:[self selectedCar]];
-       
-    }
+        
+    } 
 }
 
 
-//- (IBAction)unwindToContactsTableViewController:(UIStoryboardSegue *)unwindSegue {
-//    UIViewController *sourceViewController = unwindSegue.sourceViewController;
-//    // Use data from the view controller which initiated the unwind segue
-//}
+
+
+
+
+// unwind or to avoid going back to login screen.
+- (IBAction)unwindToUserViewController:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+    if ([sourceViewController isKindOfClass:[ UserViewController class]]) {
+        NSLog(@"We can't go back to Login screen due to implemenete unwind segue.");
+        
+    }
+}
+
 
 
 @end

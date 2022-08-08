@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "Car.h"
 #import "CarViewController.h"
+
 @import Firebase;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -27,7 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ratingTextField;
 
-
+@property NSString *URLAddress;
+@property NSURL *URL;
 
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
@@ -38,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL) update: (Car*) car;
 -(BOOL) delete: (Car*) car;
 
--(void) textFieldDEnabled;
+-(void) textFieldEnabled;
 -(void) textFieldDisabled;
 
 @end

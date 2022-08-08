@@ -41,7 +41,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property Car * car;
 
--(BOOL) update: (Car*) car;
 @end
 
 NS_ASSUME_NONNULL_END

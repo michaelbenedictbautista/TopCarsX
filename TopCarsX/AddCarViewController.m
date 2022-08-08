@@ -138,4 +138,20 @@
     return [self transmissionDrivetrain][component][row];
 }
 
+
+- (IBAction)didPressClearButton:(id)sender {
+    
+    [[self makeTextField] setText:@""];
+    [[self modelTextField] setText:@""];
+    [[self yearTextField] setText:@""];
+    [[self transmissionTextField] setText:@""];
+    [[self drivetrainTextField] setText:@""];
+    [[self engineTextField] setText:@""];
+    [[self priceTextField] setText:@""];
+    [[self ratingTextField] setText:@""];
+    //[[self photoTextField] setText:@""];
+    //[[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
+    [[self videoTextField] setText:@""];
+}
+
 @end

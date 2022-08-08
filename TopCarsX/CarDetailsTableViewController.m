@@ -6,7 +6,10 @@
 //
 
 #import "CarDetailsTableViewController.h"
-#import "CarViewController.h"
+#import "CarVideoTableViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
+
 
 @interface CarDetailsTableViewController ()
 
@@ -20,11 +23,12 @@
     [super viewDidLoad];
     
     
+    
+    
     self.firestore = [FIRFirestore firestore];
     
     CarViewController *carViewController = [[CarViewController alloc] init];
     [ [self carViewController] setFirestore:[self firestore]];
-    
     
     
     [[self photoImageView] setImage:[[self car] photo] ];
@@ -117,7 +121,7 @@
     [self textFieldEnabled];
 }
 
-// Function disable textField
+// Function enable textField
 -(void) textFieldEnabled{
     [[self transimissionTextField] setEnabled:TRUE];
     [[self transimissionTextField] setBorderStyle:UITextBorderStyleBezel];
@@ -131,7 +135,7 @@
     [[self updateButton] setEnabled:TRUE];
 }
 
-// Function enable textField
+// Function disable textField
 -(void) textFieldDisabled{
     [[self transimissionTextField] setEnabled:FALSE];
     [[self transimissionTextField] setBorderStyle:UITextBorderStyleNone];
@@ -156,16 +160,16 @@
             Else use setData with the merge property, in this case setData is recommended, I'm using update as demonstration
     */
     [carReference updateData:@{
-        @"make": [car make],
-        @"model": [car model],
-        @"year": [car year],
+        //@"make": [car make],
+        //@"model": [car model],
+        //@"year": [car year],
         @"transmission": [car transmission],
         @"drivetrain": [car drivetrain],
         @"engine": [car engine],
         @"price": [car price],
         @"rating": [car rating],
         //@"photo": [car photo],
-        @"video": [car video]
+        //@"video": [car video]
     } completion:^(NSError * _Nullable error) {
         if(error != nil){
             NSLog(@"Error updating car data: %@", error);
@@ -207,6 +211,7 @@
                 });
             }
             else {
+                
                 NSLog(@"Found %li cars", [snapshot count]);
                 if([snapshot count] > 0){
                     //FIRDocumentSnapshot *document = snapshot.documents.firstObject;
@@ -216,34 +221,27 @@
                         NSLog(@"Car: %@", myCarDictionary);
                         Car* myCar = [[Car alloc] initWithDictionary:myCarDictionary];
                         [myCar setAutoId:[document documentID]];
-                        
-                        
-                        
-                        
+                                        
                         self.firestore = [FIRFirestore firestore];
                         
                         FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
                         
                         
                         if ([carsCollectionRef queryWhereField:@"model" isEqualTo:[myCar model]]) {
-                            
-                            NSLog(@" 1this is my card ID %@", [myCar drivetrain]);
-                            
-                            Car * updatedCar = [[Car alloc] init];
-                            
-                            [updatedCar setAutoId:[myCar autoId]];
-                            [updatedCar setMake:[myCar make]];
-                            [updatedCar setModel:[myCar model]];
-                            [updatedCar setYear:[myCar year]];
-                            [updatedCar setTransmission:transmission];
-                            [updatedCar setDrivetrain:drivetrain];
-                            [updatedCar setEngine:engine];
-                            [updatedCar setPrice:price];
-                            [updatedCar setRating:rating];
-                            //[updatedCar setPhoto:[myCar photo]];
-                            [updatedCar setVideo:[myCar video]];
-                            //[self update:updatedCar];
-                            
+                                Car * updatedCar = [[Car alloc] init];
+                                
+                                [updatedCar setAutoId:[myCar autoId]];
+                                [updatedCar setMake:[myCar make]];
+                                [updatedCar setModel:[myCar model]];
+                                [updatedCar setYear:[myCar year]];
+                                [updatedCar setTransmission:transmission];
+                                [updatedCar setDrivetrain:drivetrain];
+                                [updatedCar setEngine:engine];
+                                [updatedCar setPrice:price];
+                                [updatedCar setRating:rating];
+                                //[updatedCar setPhoto:[myCar photo]];
+                                [updatedCar setVideo:[myCar video]];
+                        
                             if ([self update:updatedCar]) {
                                 NSLog(@"Successfully updated!");
                                 [self textFieldDisabled];
@@ -255,7 +253,6 @@
                             
                     }
                         
-                  
                 }else{
                     NSLog (@"Car model provided does not match any record in the database");
                 }
@@ -345,7 +342,6 @@
             // Action for the cancel button
             UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                
-                
                 [self dismissViewControllerAnimated:YES completion:nil];
             }];
             
@@ -357,5 +353,61 @@
             
 }
 
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue destinationViewController] isKindOfClass:[ CarVideoTableViewController class]]) {
+        CarVideoTableViewController* carVideoTableViewController = [segue destinationViewController ];
+        [carVideoTableViewController setCar:[self car]];
+        
+    }
+}
+
+
+-(void)playBackFinished:(NSNotification *) notification {
+    
+    // Will be called when AVPlayer finishes playing playerItem
+    AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
+    [playerViewController dismissViewControllerAnimated:false completion:nil];
+}
+
+
+-(void) playVideo {
+    
+    if ([[[self modelLabel] text] isEqual:@"Emira"]) {
+        _URLAddress= @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/EmiraVid.mp4?alt=media&token=7c531d32-e09e-492c-bbd3-28096cff983a";
+        //Create a URL object.
+        _URL = [NSURL URLWithString:_URLAddress];
+        //NSURL *videoURL = [NSURL fileURLWithPath:filePath]; // local
+        //filePath may be from the Bundle or from the Saved file Directory, it is just the path for the video
+        AVPlayer *avPlayer = [AVPlayer playerWithURL:_URL];
+        AVPlayerViewController * avPlayerViewController = [AVPlayerViewController new];
+        avPlayerViewController.player = avPlayer;
+        [avPlayerViewController.player play];//Used to Play On start
+        [self presentViewController:avPlayerViewController animated:YES completion:nil];
+    
+        AVPlayerItem *avPlayerItem = avPlayer.currentItem;
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playBackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:avPlayerItem];
+    }
+    
+        
+   
+    
+    
+    
+
+    
+
+}
+
+
+- (IBAction)didPressPlay:(id)sender {
+    [self playVideo];
+    NSLog(@"Clicked play");
+}
 
 @end

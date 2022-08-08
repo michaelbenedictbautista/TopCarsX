@@ -22,8 +22,6 @@
 -(void) findAll: (void(^)(NSMutableDictionary *)) completion;
 
 -(BOOL) add: (Car*) Car;
--(BOOL) update: (Car*) car;
-
 
 @property (weak, nonatomic) IBOutlet UIScrollView *carScrollViewController;
 

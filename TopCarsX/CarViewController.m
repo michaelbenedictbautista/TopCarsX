@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *videoTextField;
 
-
+@property Car * carDetail;
 
 @end
 
@@ -35,6 +35,9 @@
     _carScrollViewController.contentSize = CGSizeMake(317, 950);
     
     _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
+    
+    
+    
     
     //CarViewController * carViewController = [[CarViewController alloc] init];
     
@@ -176,7 +179,7 @@
         }];
 }
 
-//Clear textfields function declaration and definition
+// Clear textfields function declaration and definition
 -(void) clearScreen {
     [[self idTextField] setText:@""];
     [[self makeTextField] setText:@""];
@@ -192,13 +195,24 @@
     [[self videoTextField] setText:@""];
     
 }
-//Clear Button action
+
+// Clear Button action
 - (IBAction)didPressClear:(id)sender {
     [self clearScreen]; // call clearScreen function when once Clear button is clicked.
 }
 
+// Search by ID function declaration and definition
+-(BOOL) carHasAValidId: (NSString* ) carId {
+    //remove empty spaces at the beginning and end
+    NSString* trimmedCarId = [carId stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    //check if there is something to search for after removing the empty spaces
+    if([trimmedCarId length] == 0){
+        return NO;
+    }
+    return YES;
+}
 
-//Search by ID function declaration and definition
+//Search Button action
 -(void) searchCarById: (NSString *) carId completeBlock: (void(^)(Car *)) completeBlock {
     
     __block Car * carFound;
@@ -227,17 +241,8 @@
     
     NSLog(@"Car: " );
 }
-// validate carId for empty spaces and nil
--(BOOL) carHasAValidId: (NSString* ) carId{
-//remove empty spaces at the beginning and end
-NSString* trimmedCarId = [carId stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-//check if there is something to search for after removing the empty spaces
-if([trimmedCarId length] == 0){
-    return NO;
-}
-return YES;
-}
-//Search Button action
+// Validate carId for empty spaces and nil
+
 - (IBAction)didPressSearchById:(id)sender {
     NSString * carId = [[self idTextField] text];
     
@@ -258,40 +263,53 @@ return YES;
                 
                 //Hardcoded
                 self.firestore = [FIRFirestore firestore];
-                
+
                 FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
-                
-                
+
+
                 if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual:@"GR86"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"GR86Img"]];
-                    
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual:@"296 GTB Coupe"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"296Img"]];
-                
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual:@"220i M Sport Coupe"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"220iImg"]];
 
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Vantage F1 Coupe"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"VantageImg"]];
-                    
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"911 Carrera GTS Coupe"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"911Img"]];
-                    
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Artura"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"ArturaImg"]];
-                
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Huracan"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"HuracanImg"]];
-                    
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"MC20 Coupe"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"MC20Img"]];
-                    
+
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Emira"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"EmiraImg"]];
-                    
-                } else [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
+
+                } else {
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
+                }
                 
                 
+//                NSString* carKeyKey = [[ self modelTextField]text];
+//                [self findAll:^(NSMutableDictionary * _Nonnull carsDictionary) {
+//                    if (carsDictionary != nil) {
+//                        [[self photoImageView] setImage:[UIImage imageNamed:[carsDictionary objectForKey:[car photo]]]];
+//
+//
+//                    }
+//                    //[[self carViewController]reloadData];
+//                }];
+                
+
                 [[self videoTextField] setText:[car video]];
             }
         }];
@@ -301,7 +319,7 @@ return YES;
     }
 }
 
-//findAll function declaration and definition
+// FindAll function declaration and definition
 -(void) findAll: (void(^)(NSMutableDictionary *)) completion{
     //https://firebase.google.com/docs/firestore/query-data/listen
     [[self.firestore collectionWithPath:@"SportsCars"] addSnapshotListener:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
@@ -430,38 +448,5 @@ return YES;
         [self showUIAlertWithMessage:@"You must enter car model on the textfield provided" andTitle:@"Search result"];
     }
 }
-
-
--(BOOL) update: (Car*) car{
-    __block BOOL isUpdated = YES;
-    
-    //Fetch the document by using the Id
-    FIRDocumentReference *carReference = [[[self firestore] collectionWithPath:@"SportsCars"] documentWithPath:[car autoId]];
-    /**
-            To update some fields of a document without overwriting the entire document, use the update() method.
-            Else use setData with the merge property, in this case setData is recommended, I'm using update as demonstration
-    */
-    [carReference updateData:@{
-        @"make": [car make],
-        @"model": [car transmission],
-        @"year": [car year],
-        @"transmission": [car transmission],
-        @"drivetrain": [car drivetrain],
-        @"engine": [car engine],
-        @"price": [car price],
-        @"rating": [car rating],
-        //@"photo": [car photo],
-        //@"video": [car video],
-    } completion:^(NSError * _Nullable error) {
-        if(error != nil){
-            NSLog(@"Error updating car data: %@", error);
-            isUpdated = NO;
-        }else{
-            NSLog(@"Car data successfully updated");
-        }
-    }];
-    return isUpdated;
-}
-
 
 @end

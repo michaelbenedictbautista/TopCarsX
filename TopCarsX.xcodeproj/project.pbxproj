@@ -27,6 +27,8 @@
 		27B66995288D7C640067EF2B /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B66994288D7C640067EF2B /* Car.m */; };
 		27B6699B288DA7BE0067EF2B /* CarsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */; };
 		27B6699E288DAFE00067EF2B /* CarsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */; };
+		27B9272E289ED75C00E2569F /* CarVideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B9272D289ED75C00E2569F /* CarVideoTableViewController.m */; };
+		27B96B4228980AD700F78D0C /* defaultUser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27B96B4128980AD700F78D0C /* defaultUser.jpg */; };
 		A8CC9D763FCB37BF4964615D /* Pods_TopCarsX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFE7E94D60B6D162D7283FB /* Pods_TopCarsX.framework */; };
 		AF2B9DA8F3C373B3D8D16D9E /* Pods_TopCarsXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */; };
 		DA34F1C319A522753D41D1A4 /* Pods_TopCarsX_TopCarsXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FD7C71736608D7FB7DE4D6 /* Pods_TopCarsX_TopCarsXUITests.framework */; };
@@ -88,6 +90,9 @@
 		27B6699A288DA7BE0067EF2B /* CarsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewController.m; sourceTree = "<group>"; };
 		27B6699C288DAFE00067EF2B /* CarsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarsTableViewCell.h; sourceTree = "<group>"; };
 		27B6699D288DAFE00067EF2B /* CarsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewCell.m; sourceTree = "<group>"; };
+		27B9272C289ED75C00E2569F /* CarVideoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarVideoTableViewController.h; sourceTree = "<group>"; };
+		27B9272D289ED75C00E2569F /* CarVideoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarVideoTableViewController.m; sourceTree = "<group>"; };
+		27B96B4128980AD700F78D0C /* defaultUser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultUser.jpg; sourceTree = "<group>"; };
 		39A75ACBA14CD064D7927CFB /* Pods-TopCarsX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX.release.xcconfig"; path = "Target Support Files/Pods-TopCarsX/Pods-TopCarsX.release.xcconfig"; sourceTree = "<group>"; };
 		3C57CAC1B0C7A0950B70CE11 /* Pods-TopCarsX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopCarsX.debug.xcconfig"; path = "Target Support Files/Pods-TopCarsX/Pods-TopCarsX.debug.xcconfig"; sourceTree = "<group>"; };
 		5FAC3CEEDC44E20D0DC691AC /* Pods_TopCarsXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopCarsXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +161,8 @@
 				277F657A287BF7690086C383 /* SceneDelegate.h */,
 				277F657B287BF7690086C383 /* SceneDelegate.m */,
 				277F6580287BF7690086C383 /* Main.storyboard */,
+				27B9272C289ED75C00E2569F /* CarVideoTableViewController.h */,
+				27B9272D289ED75C00E2569F /* CarVideoTableViewController.m */,
 				27A3EA9F2892E3850081E215 /* User.h */,
 				27A3EAA02892E3850081E215 /* User.m */,
 				27B66993288D7C640067EF2B /* Car.h */,
@@ -177,6 +184,7 @@
 				273A82EF289190A300ABF1A8 /* CarsCollectionViewCell.h */,
 				273A82F0289190A300ABF1A8 /* CarsCollectionViewCell.m */,
 				277F6583287BF76A0086C383 /* Assets.xcassets */,
+				27B96B4128980AD700F78D0C /* defaultUser.jpg */,
 				277F6585287BF76A0086C383 /* LaunchScreen.storyboard */,
 				277F6588287BF76A0086C383 /* Info.plist */,
 				277F6589287BF76A0086C383 /* main.m */,
@@ -332,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27B96B4228980AD700F78D0C /* defaultUser.jpg in Resources */,
 				277F6587287BF76A0086C383 /* LaunchScreen.storyboard in Resources */,
 				277F65B2287C27E30086C383 /* GoogleService-Info.plist in Resources */,
 				277F6584287BF76A0086C383 /* Assets.xcassets in Resources */,
@@ -466,6 +475,7 @@
 				27A3EAA12892E3850081E215 /* User.m in Sources */,
 				27B6699B288DA7BE0067EF2B /* CarsTableViewController.m in Sources */,
 				27B66995288D7C640067EF2B /* Car.m in Sources */,
+				27B9272E289ED75C00E2569F /* CarVideoTableViewController.m in Sources */,
 				27B6699E288DAFE00067EF2B /* CarsTableViewCell.m in Sources */,
 				277F657F287BF7690086C383 /* CarViewController.m in Sources */,
 				277F6579287BF7690086C383 /* AppDelegate.m in Sources */,

@@ -44,20 +44,17 @@
 }
 */
 - (IBAction)loginButton:(id)sender {
-    
-}
 
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    
-    
     if ([[segue destinationViewController] isKindOfClass:[ CarsTableViewController class]]) {
         CarsTableViewController* carsTableViewController = [segue destinationViewController ];
         [carsTableViewController setUser:_user];
-       
+        
     }
     
 }
