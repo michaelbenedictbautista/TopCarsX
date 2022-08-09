@@ -29,9 +29,9 @@
         [[self user] setPassword: @"12345"];
         [[self user] setPhoto:[UIImage imageNamed:@"userPhoto"]];
     
-    // Set hardcoded email and password
-    [[self emailTextField] setText:[_user email]];
-    [[self passwordTextField] setText:[_user password]];
+        // Set hardcoded email and password
+        [[self emailTextField] setText:[_user email]];
+        [[self passwordTextField] setText:[_user password]];
 }
 
 /*
@@ -57,6 +57,16 @@
         
     }
     
+}
+
+// unwind or to avoid going back to AddCarViewController
+- (IBAction)unwindToUserViewController:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    
+    if ([sourceViewController isKindOfClass:[ UserViewController class]]) {
+        NSLog(@"We can't go back to Add screen due to implemeneted unwind segue.");
+        
+    }
 }
 
 @end

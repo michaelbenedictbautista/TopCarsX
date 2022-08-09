@@ -11,6 +11,7 @@
 #import "UserViewController.h"
 #import "CarDetailsTableViewController.h"
 #import "CarVideoTableViewController.h"
+#import "AddCarViewController.h"
 
 
 @interface CarsTableViewController ()
@@ -179,20 +180,25 @@
     } 
 }
 
-
-
-
-
-
-// unwind or to avoid going back to login screen.
-- (IBAction)unwindToUserViewController:(UIStoryboardSegue *)unwindSegue {
+// unwind or to avoid going back to AddCarViewController
+- (IBAction)unwindToAddCarViewController:(UIStoryboardSegue *)unwindSegue {
     UIViewController *sourceViewController = unwindSegue.sourceViewController;
-    // Use data from the view controller which initiated the unwind segue
-    if ([sourceViewController isKindOfClass:[ UserViewController class]]) {
-        NSLog(@"We can't go back to Login screen due to implemenete unwind segue.");
+    
+    if ([sourceViewController isKindOfClass:[ AddCarViewController class]]) {
+        NSLog(@"We can't go back to Add screen due to implemeneted unwind segue.");
         
     }
 }
+
+- (IBAction)unwindToCarDetailsTableViewController:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    
+    if ([sourceViewController isKindOfClass:[ CarDetailsTableViewController class]]) {
+        NSLog(@"We can't go back to Login screen due to implemeneted unwind segue.");
+        
+    }
+}
+
 
 
 

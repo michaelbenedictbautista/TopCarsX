@@ -18,11 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-   
-    
-    
-   
 }
 
 //#pragma mark - Table view data source
@@ -90,14 +85,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-//-(void)playBackFinished:(NSNotification *) notification {
-//    // Will be called when AVPlayer finishes playing playerItem
-//
-//    [self playerViewController] dismissViewControllerAnimated:false completion:nil];
-//}
-
-
 
 
 @end

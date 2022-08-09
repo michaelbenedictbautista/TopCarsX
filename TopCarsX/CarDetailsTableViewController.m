@@ -10,8 +10,14 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
 
+#import "generateQRTableViewController.h"
+#import <CoreImage/CoreImage.h>
+#define kText @"http://d.hatena.ne.jp/shu223/"
+
 
 @interface CarDetailsTableViewController ()
+
+@property Car * selectedCar;
 
 @property CarViewController * carViewController;
 
@@ -24,11 +30,10 @@
     
     
     
-    
     self.firestore = [FIRFirestore firestore];
     
-    CarViewController *carViewController = [[CarViewController alloc] init];
-    [ [self carViewController] setFirestore:[self firestore]];
+    //CarViewController *carViewController = [[CarViewController alloc] init];
+    [[self carViewController] setFirestore:[self firestore]];
     
     
     [[self photoImageView] setImage:[[self car] photo] ];
@@ -304,7 +309,6 @@
                         NSLog(@"Error retrieving car data: %@", error);
                     }else{
                         
-                        
     
                         //FIRDocumentSnapshot *document = snapshot.documents.firstObject;
                         for (FIRDocumentSnapshot *document in [snapshot documents]) {
@@ -354,7 +358,6 @@
 }
 
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
@@ -363,51 +366,56 @@
         CarVideoTableViewController* carVideoTableViewController = [segue destinationViewController ];
         [carVideoTableViewController setCar:[self car]];
         
+    } else if ([[segue destinationViewController] isKindOfClass:[ generateQRTableViewController class]]) {
+        generateQRTableViewController* generateQRTableViewControllerObject = [segue destinationViewController ];
+        [generateQRTableViewControllerObject setCar:[self car]];
     }
 }
 
 
--(void)playBackFinished:(NSNotification *) notification {
+-(void)playerFinished:(NSNotification *) notification {
     
-    // Will be called when AVPlayer finishes playing playerItem
+    // AVPlayer finishes playing playerItem
     AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
     [playerViewController dismissViewControllerAnimated:false completion:nil];
 }
 
 
--(void) playVideo {
+-(void) playMyVideo {
+    
+    //NSString* filePathLocalStorage= @"/Users/mike/Documents/Docs/AIT/Moblile App iOS/TopCarsX/TopCarsX/Assets.xcassets/EmiraImg.imageset"
+    //NSURL *imageLocalURL = [NSURL fileURLWithPath:filePathLocalStorage]; // local storage
+    //filePathLocalStorage may be from the Bundle or from the Saved file Directory.
     
     if ([[[self modelLabel] text] isEqual:@"Emira"]) {
         _URLAddress= @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/EmiraVid.mp4?alt=media&token=7c531d32-e09e-492c-bbd3-28096cff983a";
-        //Create a URL object.
-        _URL = [NSURL URLWithString:_URLAddress];
-        //NSURL *videoURL = [NSURL fileURLWithPath:filePath]; // local
-        //filePath may be from the Bundle or from the Saved file Directory, it is just the path for the video
-        AVPlayer *avPlayer = [AVPlayer playerWithURL:_URL];
+        
+        // Initilialsie a URL object and pass URLAddress as an argument
+        _URLVideo = [NSURL URLWithString:_URLAddress];
+        
+        // Initilialsie an AVplayer
+        AVPlayer *avPlayer = [AVPlayer playerWithURL:_URLVideo];
         AVPlayerViewController * avPlayerViewController = [AVPlayerViewController new];
         avPlayerViewController.player = avPlayer;
-        [avPlayerViewController.player play];//Used to Play On start
+        [avPlayerViewController.player play];// Play start automatically
         [self presentViewController:avPlayerViewController animated:YES completion:nil];
     
         AVPlayerItem *avPlayerItem = avPlayer.currentItem;
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playBackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:avPlayerItem];
-    }
-    
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:avPlayerItem];
         
-   
-    
-    
-    
-
-    
-
+    }
 }
-
 
 - (IBAction)didPressPlay:(id)sender {
-    [self playVideo];
-    NSLog(@"Clicked play");
+    [self playMyVideo];
 }
 
+
+- (IBAction)didPressQrCode:(id)sender {
+    NSLog(@"Navigate to QRCode Screen.");
+}
+
+
+//[self presentViewController:alert animated:YES completion:nil];
 @end

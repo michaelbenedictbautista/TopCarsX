@@ -68,6 +68,7 @@
             @"rating": [car rating],
             //@"photo": [car photo],
             //@"photo":[UIImage imageNamed:@"defaultCar1"],
+            @"photo": @"defaultCar1",
             @"video": [car video]
         } completion:^(NSError * _Nullable error) {
             if(error != nil){

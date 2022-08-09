@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CarVideoTableViewController : UITableViewController
 @property Car * car;
 
--(void) playVideo;
+//-(void) playVideo;
 
 @end
 

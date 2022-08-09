@@ -29,10 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *ratingTextField;
 
 @property NSString *URLAddress;
-@property NSURL *URL;
+@property NSURL *URLVideo;
 
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
+
 
 
 @property Car * car;
@@ -42,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void) textFieldEnabled;
 -(void) textFieldDisabled;
+
+-(void) playMyVideo;
+-(void) generateQRCode;
 
 @end
 
