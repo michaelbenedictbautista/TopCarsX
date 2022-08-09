@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) textFieldDisabled;
 
 -(void) playMyVideo;
--(void) generateQRCode;
+
 
 @end
 

@@ -11,9 +11,6 @@
 #import <AVKit/AVKit.h>
 
 #import "generateQRTableViewController.h"
-#import <CoreImage/CoreImage.h>
-#define kText @"http://d.hatena.ne.jp/shu223/"
-
 
 @interface CarDetailsTableViewController ()
 
@@ -381,11 +378,15 @@
 }
 
 
+// Function to play sample video of a car
 -(void) playMyVideo {
     
     //NSString* filePathLocalStorage= @"/Users/mike/Documents/Docs/AIT/Moblile App iOS/TopCarsX/TopCarsX/Assets.xcassets/EmiraImg.imageset"
     //NSURL *imageLocalURL = [NSURL fileURLWithPath:filePathLocalStorage]; // local storage
     //filePathLocalStorage may be from the Bundle or from the Saved file Directory.
+    
+    
+    
     
     if ([[[self modelLabel] text] isEqual:@"Emira"]) {
         _URLAddress= @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/EmiraVid.mp4?alt=media&token=7c531d32-e09e-492c-bbd3-28096cff983a";
@@ -407,11 +408,12 @@
     }
 }
 
+// Action button to play video by call the playMyVideo function
 - (IBAction)didPressPlay:(id)sender {
     [self playMyVideo];
 }
 
-
+// Action button to navigate in generateTableViewController
 - (IBAction)didPressQrCode:(id)sender {
     NSLog(@"Navigate to QRCode Screen.");
 }
