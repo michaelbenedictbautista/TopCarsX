@@ -387,9 +387,14 @@
     
     
     
-    
     if ([[[self modelLabel] text] isEqual:@"Emira"]) {
-        _URLAddress= @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/EmiraVid.mp4?alt=media&token=7c531d32-e09e-492c-bbd3-28096cff983a";
+        _URLAddress=
+        @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/video%2FEmiraVid.mp4?alt=media&token=34d85828-b7c1-4b79-b6b4-a30bd78e0d25";
+    } else if ([[[self modelLabel] text] isEqual:@"Artura"]) {
+        _URLAddress=
+        @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/video%2FArturaVid.mp4?alt=media&token=8afc5367-b8d7-477c-8391-67ba6617467a";
+    }
+    
         
         // Initilialsie a URL object and pass URLAddress as an argument
         _URLVideo = [NSURL URLWithString:_URLAddress];
@@ -405,7 +410,7 @@
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:avPlayerItem];
         
-    }
+    
 }
 
 // Action button to play video by call the playMyVideo function

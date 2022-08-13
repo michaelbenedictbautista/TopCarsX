@@ -735,10 +735,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-vy-EwW">
-                                                    <rect key="frame" x="147" y="229" width="82" height="31"/>
+                                                    <rect key="frame" x="16" y="229" width="343" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="generate"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="Generate QR code"/>
                                                     <connections>
                                                         <action selector="didPressGenerateQRCode:" destination="4Li-xc-vcG" eventType="touchUpInside" id="xxA-nM-6Rt"/>
                                                     </connections>
