@@ -595,23 +595,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tD-wh-mMe">
-                                                    <rect key="frame" x="16" y="24" width="54" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tD-wh-mMe">
+                                                    <rect key="frame" x="16" y="25.5" width="343" height="28.5"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" image="play.fill" catalog="system"/>
+                                                    <buttonConfiguration key="configuration" style="filled" image="play.fill" catalog="system" subtitle="Play video" imagePadding="10"/>
                                                     <connections>
                                                         <action selector="didPressPlay:" destination="31q-VU-Xk7" eventType="touchUpInside" id="c9u-Zh-nhb"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95u-Yn-mYB">
-                                                    <rect key="frame" x="78" y="29" width="281" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8tD-wh-mMe" firstAttribute="leading" secondItem="W9U-xS-5HR" secondAttribute="leading" constant="16" id="M9x-68-5HQ"/>
+                                                <constraint firstItem="8tD-wh-mMe" firstAttribute="centerY" secondItem="W9U-xS-5HR" secondAttribute="centerY" id="YqB-Q9-tuN"/>
+                                                <constraint firstAttribute="trailing" secondItem="8tD-wh-mMe" secondAttribute="trailing" constant="16" id="wdV-92-6Mw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="6IV-6N-iuj">
@@ -621,17 +618,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vW3-26-cM3">
-                                                    <rect key="frame" x="16" y="24" width="343" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vW3-26-cM3">
+                                                    <rect key="frame" x="16" y="25.5" width="343" height="28.5"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="QR code"/>
+                                                    <buttonConfiguration key="configuration" style="filled" image="qrcode" catalog="system" subtitle="QR code" imagePadding="10"/>
                                                     <connections>
                                                         <action selector="didPressQrCode:" destination="31q-VU-Xk7" eventType="touchUpInside" id="rac-6E-c2L"/>
                                                         <segue destination="4Li-xc-vcG" kind="show" id="cB3-X0-xgw"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vW3-26-cM3" secondAttribute="trailing" constant="16" id="gkx-0m-HN1"/>
+                                                <constraint firstItem="vW3-26-cM3" firstAttribute="leading" secondItem="Kbl-bz-5Ov" secondAttribute="leading" constant="16" id="khw-po-hTX"/>
+                                                <constraint firstItem="vW3-26-cM3" firstAttribute="centerY" secondItem="Kbl-bz-5Ov" secondAttribute="centerY" id="zad-rF-lLB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="xlC-HV-n5e">
@@ -641,9 +642,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wb-bC-gLm">
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wb-bC-gLm">
                                                     <rect key="frame" x="16" y="24" width="343" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Update"/>
                                                     <connections>
@@ -652,6 +652,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Wb-bC-gLm" firstAttribute="leading" secondItem="trw-Uj-Zts" secondAttribute="leading" constant="16" id="Cav-dm-ARb"/>
+                                                <constraint firstItem="9Wb-bC-gLm" firstAttribute="centerY" secondItem="trw-Uj-Zts" secondAttribute="centerY" id="Zox-PJ-FPN"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Wb-bC-gLm" secondAttribute="trailing" constant="16" id="eAV-Ri-ZNa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -723,20 +728,18 @@
                         <sections>
                             <tableViewSection id="PUp-AI-FJ9">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="400" id="aNt-u4-uKp">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="320" id="aNt-u4-uKp">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aNt-u4-uKp" id="4gw-hH-xYS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="19X-td-cUD">
-                                                    <rect key="frame" x="67" y="11" width="240" height="166"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="QRImg" translatesAutoresizingMaskIntoConstraints="NO" id="19X-td-cUD">
+                                                    <rect key="frame" x="67" y="18" width="240" height="166"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-vy-EwW">
-                                                    <rect key="frame" x="16" y="229" width="343" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-vy-EwW">
+                                                    <rect key="frame" x="16" y="202" width="343" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Generate QR code"/>
                                                     <connections>
@@ -744,6 +747,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dto-vy-EwW" firstAttribute="top" secondItem="19X-td-cUD" secondAttribute="bottom" constant="29" id="EhI-cE-9cC"/>
+                                                <constraint firstAttribute="trailing" secondItem="dto-vy-EwW" secondAttribute="trailing" constant="16" id="GNS-ey-0Jt"/>
+                                                <constraint firstItem="dto-vy-EwW" firstAttribute="leading" secondItem="4gw-hH-xYS" secondAttribute="leading" constant="16" id="P0Y-lg-9IC"/>
+                                                <constraint firstItem="19X-td-cUD" firstAttribute="centerX" secondItem="4gw-hH-xYS" secondAttribute="centerX" id="ZxO-w9-xHK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -789,7 +798,7 @@
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVR-D0-X3k">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVR-D0-X3k">
                                         <rect key="frame" x="20" y="306.5" width="344" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -801,16 +810,19 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                         <connections>
-                                            <action selector="loginButton:" destination="4TU-aX-Yux" eventType="touchUpInside" id="irD-z2-ohz"/>
-                                            <segue destination="loJ-E4-gLT" kind="show" id="AJu-2p-F1M"/>
+                                            <action selector="loginButton:" destination="4TU-aX-Yux" eventType="touchUpInside" id="G5C-YI-gJl"/>
+                                            <segue destination="loJ-E4-gLT" kind="show" id="LW1-Ae-YyF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpn-dl-DbJ">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpn-dl-DbJ">
                                         <rect key="frame" x="20" y="519" width="343" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Google"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Google"/>
+                                        <connections>
+                                            <action selector="didPressGoogleLogin:" destination="4TU-aX-Yux" eventType="touchUpInside" id="pD6-t9-1RG"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or sign in with-------------------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-Oa-4JA">
                                         <rect key="frame" x="20" y="476" width="343" height="21"/>
@@ -819,7 +831,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email or Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFv-be-Pgg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFv-be-Pgg">
                                         <rect key="frame" x="20" y="209" width="343" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -844,7 +856,7 @@
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-01-z8P">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rnJ-01-z8P">
                                         <rect key="frame" x="20" y="237" width="344" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -893,9 +905,10 @@
         <image name="296Img" width="1952" height="1098"/>
         <image name="ArturaImg" width="960" height="540"/>
         <image name="M4Img" width="1952" height="1098"/>
-        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="QRImg" width="224" height="224"/>
         <image name="logo" width="500" height="232"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="linkColor">
