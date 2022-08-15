@@ -30,25 +30,11 @@
     
     _transmissionDrivetrain = @[@[@"Auto", @"Manual", @"Auto&Manual"], @[@"All-wheel", @"Rear-wheel", @"Front-wheel"]];
     
-//    _photoArray = @[@"defaultCar1", @"defaultCar2", @"defaultCar3"];
     
-//    [[self photoPicker] setDelegate:self];
-//    [[self photoPicker] setDataSource:self];
     [[self transmissionDrivetrainPicker] setDelegate:self];
     [[self transmissionDrivetrainPicker] setDataSource:self];
    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 -(BOOL) add: (Car *) car{
     __block BOOL isAdded = YES;
@@ -84,7 +70,7 @@
     return isAdded;
 }
 
-// add car button
+// Add car button function
 - (IBAction)didPressAddButton:(id)sender {
     Car * car = [[Car alloc] init];
     [car setMake:[[self makeTextField] text] ];
@@ -98,7 +84,6 @@
     [car setRating:[[self ratingTextField] text] ];
     [car setVideo:[[self videoTextField] text] ];
     [car setPhoto:[UIImage imageNamed:@"defaultCar1"]];
-    
     [self add:car];
 }
 
@@ -139,7 +124,7 @@
     return [self transmissionDrivetrain][component][row];
 }
 
-
+// Clear all textfields
 - (IBAction)didPressClearButton:(id)sender {
     
     [[self makeTextField] setText:@""];

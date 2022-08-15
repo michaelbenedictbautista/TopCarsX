@@ -23,14 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-    // Connect to firebase
+
     self.firestore = [FIRFirestore firestore];
     
     _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
@@ -41,7 +34,7 @@
     [carViewController setFirestore:[self firestore]];
     
     
-    // This will executed in separate thread
+    // This will be executed in separate thread
     [carViewController findAll:^(NSMutableDictionary * _Nonnull dictionary) {
         if (dictionary != nil) {
             for (NSString * key in dictionary) {
@@ -51,11 +44,7 @@
         }
         [[self carsTableView]reloadData];
     }];
-    
-//    cell.yourImageView.layer.cornerRadius = cell.yourImageView.frame.size.height /2;
-//    cell.yourImageView.layer.masksToBounds = YES;
-//    cell.yourImageView.layer.borderWidth = 0;
-    
+        
 }
 
 #pragma mark - Table view data source
@@ -70,13 +59,12 @@
     
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString * cellIdentifier = @"CarCell";
     
     CarsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    // Configure the cells
     if (cell == nil) {
         cell  = [[CarsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
@@ -87,9 +75,7 @@
     
     NSDictionary * carDictionary = [carsArray objectAtIndex:[indexPath row]];
     
-//    NSDictionary * sampleDictionary = [self carsDictionary] setObject:<#(nonnull id)#> forKey:<#(nonnull id<NSCopying>)#>
-    
-    
+
     [[cell makeLabel] setText:[carDictionary objectForKey:@"make"]];
     [[cell modelLabel]setText:[carDictionary objectForKey:@"model"]];
     [[cell photoImageView] setImage:[UIImage imageNamed:[carDictionary objectForKey:@"photo"]]];
@@ -110,65 +96,6 @@
     return indexPath;
 }
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//
-//    UIViewController* viewController = [segue destinationViewController];
-//
-//    if ([viewController isKindOfClass:[CarViewController class]]) {
-//        // The destination of segue is going to CarViewController only
-//        CarViewController* carViewController = [segue destinationViewController];
-//    }
-//}
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
@@ -187,7 +114,7 @@
     if ([sourceViewController isKindOfClass:[ AddCarViewController class]]) {
         NSLog(@"We can't go back to Add screen due to implemeneted unwind segue.");
         
-    }
+    } 
 }
 
 - (IBAction)unwindToCarDetailsTableViewController:(UIStoryboardSegue *)unwindSegue {
@@ -198,8 +125,6 @@
         
     }
 }
-
-
 
 
 @end

@@ -25,13 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     self.firestore = [FIRFirestore firestore];
     
     //CarViewController *carViewController = [[CarViewController alloc] init];
     [[self carViewController] setFirestore:[self firestore]];
-    
     
     [[self photoImageView] setImage:[[self car] photo] ];
     [[self makeLabel] setText:[[self car] make]];
@@ -43,83 +40,10 @@
     [[self priceTextField] setText:[[self car] price] ];
     [[self ratingTextField] setText:[[self car] rating] ];
     
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-// action for edit icon
+// Action for edit icon that will enable texfields
 - (IBAction)didPressEdit:(id)sender {
-    
     [self textFieldEnabled];
 }
 
@@ -129,12 +53,28 @@
     [[self transimissionTextField] setBorderStyle:UITextBorderStyleBezel];
     [[self transimissionTextField] becomeFirstResponder];
     
+    
+    
     [[self drivetrainTextField] setEnabled:TRUE];
+    [[self drivetrainTextField] setBorderStyle:UITextBorderStyleBezel];
+    [[self drivetrainTextField] becomeFirstResponder];
+    
     [[self engineTextField] setEnabled:TRUE];
+    [[self engineTextField] setBorderStyle:UITextBorderStyleBezel];
+    [[self engineTextField] becomeFirstResponder];
+    
+    
     [[self priceTextField] setEnabled:TRUE];
+    [[self priceTextField] setBorderStyle:UITextBorderStyleBezel];
+    [[self priceTextField] becomeFirstResponder];
+    
+    
     [[self ratingTextField] setEnabled:TRUE];
+    [[self ratingTextField] setBorderStyle:UITextBorderStyleBezel];
+    [[self ratingTextField] becomeFirstResponder];
     
     [[self updateButton] setEnabled:TRUE];
+    
 }
 
 // Function disable textField
@@ -144,18 +84,26 @@
     
     
     [[self drivetrainTextField] setEnabled:FALSE];
+    [[self drivetrainTextField] setBorderStyle:UITextBorderStyleNone];
+    
     [[self engineTextField] setEnabled:FALSE];
+    [[self engineTextField] setBorderStyle:UITextBorderStyleNone];
+    
     [[self priceTextField] setEnabled:FALSE];
+    [[self priceTextField] setBorderStyle:UITextBorderStyleNone];
+    
     [[self ratingTextField] setEnabled:FALSE];
+    [[self ratingTextField] setBorderStyle:UITextBorderStyleNone];
     
     [[self updateButton] setEnabled:FALSE];
+    
 }
 
 // Validate for update
 -(BOOL) update: (Car*) car{
     __block BOOL isUpdated = YES;
     
-    //Fetch the document by using the Id
+    //Fetch the document by using the carId
     FIRDocumentReference *carReference = [[[self firestore] collectionWithPath:@"SportsCars"] documentWithPath:[car autoId]];
     /**
             To update some fields of a document without overwriting the entire document, use the update() method.
@@ -346,7 +294,7 @@
                 [self dismissViewControllerAnimated:YES completion:nil];
             }];
             
-            // Add action to alert
+            // Add action to alert for yes and cancel
             [alert addAction:yesAction];
             [alert addAction:cancelAction];
 
@@ -354,7 +302,7 @@
             
 }
 
-
+// segques for generateQRTableViewController and CarVideoTableViewController class
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
@@ -385,14 +333,15 @@
     //NSURL *imageLocalURL = [NSURL fileURLWithPath:filePathLocalStorage]; // local storage
     //filePathLocalStorage may be from the Bundle or from the Saved file Directory.
     
-    
-    
     if ([[[self modelLabel] text] isEqual:@"Emira"]) {
         _URLAddress=
         @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/video%2FEmiraVid.mp4?alt=media&token=34d85828-b7c1-4b79-b6b4-a30bd78e0d25";
     } else if ([[[self modelLabel] text] isEqual:@"Artura"]) {
         _URLAddress=
         @"https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/video%2FArturaVid.mp4?alt=media&token=8afc5367-b8d7-477c-8391-67ba6617467a";
+        
+        // Direct from googleDrive wont work.
+        //https://drive.google.com/file/d/1a79-P2d90jmCwbtjLExGjeKHGJc4jJXz/view?usp=sharing
     }
     
         
@@ -423,6 +372,4 @@
     NSLog(@"Navigate to QRCode Screen.");
 }
 
-
-//[self presentViewController:alert animated:YES completion:nil];
 @end

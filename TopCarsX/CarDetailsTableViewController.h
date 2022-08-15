@@ -9,13 +9,17 @@
 #import "Car.h"
 #import "CarViewController.h"
 
+
 @import Firebase;
+@import FirebaseDatabase;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarDetailsTableViewController : UITableViewController
 
+
 @property (nonatomic, strong) FIRFirestore *firestore;
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextField *makeLabel;

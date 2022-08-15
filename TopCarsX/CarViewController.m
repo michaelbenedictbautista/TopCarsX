@@ -37,8 +37,6 @@
     _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
     
     
-    
-    
     //CarViewController * carViewController = [[CarViewController alloc] init];
     
     // This will executed in separate thread
@@ -54,7 +52,7 @@
     
     _carNSDictionary = [[NSDictionary alloc] init];
     
-    // connect to firebase
+    // Connect to firebase and assign to our viewController class
     self.firestore = [FIRFirestore firestore];
     
     FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
@@ -62,12 +60,12 @@
     FIRQuery *query = [carsCollectionRef queryWhereField:@"make" isEqualTo:@"BMW"];
     
     
-    // validate firebase connection
+    // Validate firebase connection
     [query getDocumentsWithCompletion:^(FIRQuerySnapshot * _Nullable snapshot, NSError * _Nullable error) {
         if (error != nil) {
             NSLog(@"Error connection occured: %@", error);
         } else {
-            //we received data from firebase
+            // We received data from firebase
             for ( FIRDocumentSnapshot * document in [snapshot documents]) {
                 NSLog(@"DocumentID: %@", [document documentID]);
                 NSDictionary *myCars =  [document data];
@@ -78,13 +76,13 @@
     }];
 }
 
-// validation of every field
+// Validation of every field
 -(BOOL) carPassedValidations: (Car*) car
                            error: (NSMutableArray*) validationFailedMessages {
     
     BOOL passed = YES;
     /** Validate CarMake */
-    //remove empty spaces at the beginning and end
+    // remove empty spaces at the beginning and end
     NSString* trimmedCarMake = [[car make] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     //check if there is something to search for after removing the empty spaces
     if([trimmedCarMake length] == 0){
@@ -116,12 +114,12 @@
     }
     
 //    /** Validate CarDrivetrain */
-//    NSString* trimmedCarDrivetrain = [[car drivetrain] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-//    //check if there is something to search for after removing the empty spaces
-//    if([trimmedCarDrivetrain length] == 0){
-//        [validationFailedMessages addObject:@"Drivetrain is mandatory"];
-//        passed = NO;
-//    }
+    NSString* trimmedCarDrivetrain = [[car drivetrain] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    //check if there is something to search for after removing the empty spaces
+    if([trimmedCarDrivetrain length] == 0){
+        [validationFailedMessages addObject:@"Drivetrain is mandatory"];
+        passed = NO;
+    }
     
     /** Validate CarEngine */
     NSString* trimmedCarEngine = [[car engine] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -191,7 +189,7 @@
     [[self priceTextField] setText:@""];
     [[self ratingTextField] setText:@""];
     //[[self photoTextField] setText:@""];
-    [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
+    [[self photoImageView] setImage:[UIImage imageNamed:@"defaultCar3"]];
     [[self videoTextField] setText:@""];
     
 }
@@ -243,6 +241,7 @@
 }
 // Validate carId for empty spaces and nil
 
+// Action button to display search car by Id
 - (IBAction)didPressSearchById:(id)sender {
     NSString * carId = [[self idTextField] text];
     
@@ -261,7 +260,7 @@
                 //[[self photoTextField] setText:[car photo]];
                 //[[self photoImageView] setImage:[UIImage imageNamed:[_carsDictionary objectForKey:@"photo"]]];
                 
-                //Hardcoded
+                // Display car images
                 self.firestore = [FIRFirestore firestore];
 
                 FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
@@ -293,26 +292,19 @@
 
                 } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"Emira"]){
                     [[self photoImageView] setImage:[UIImage imageNamed:@"EmiraImg"]];
-
+                    
+                } else if ([carsCollectionRef queryWhereField:@"autoId" isEqualTo:carId] && [[car model] isEqual: @"M4 Competition Convertible"]){
+                    [[self photoImageView] setImage:[UIImage imageNamed:@"M4Img"]];
+                    
                 } else {
                     [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
                 }
                 
                 
-//                NSString* carKeyKey = [[ self modelTextField]text];
-//                [self findAll:^(NSMutableDictionary * _Nonnull carsDictionary) {
-//                    if (carsDictionary != nil) {
-//                        [[self photoImageView] setImage:[UIImage imageNamed:[carsDictionary objectForKey:[car photo]]]];
-//
-//
-//                    }
-//                    //[[self carViewController]reloadData];
-//                }];
-                
-
                 [[self videoTextField] setText:[car video]];
             }
         }];
+        
     }else {
         [self showUIAlertWithMessage:@"You must provide the car ID to search for" andTitle:@"Car Search Failed"];
         [[self idTextField] setText:@""];
@@ -354,6 +346,7 @@
     return YES;
 }
 
+// Action button to display search car by model
 - (IBAction)didPressSearcByCarModel:(id)sender {
     
     NSString *model  = [[self modelTextField] text];
@@ -431,9 +424,11 @@
                             
                         } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Emira"] && [model isEqual:@"Emira"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"EmiraImg"]];
+                            
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"M4 Competition Convertible"] && [model isEqual:@"M4 Competition Convertible"]){
+                            [[self photoImageView] setImage:[UIImage imageNamed:@"M4Img"]];
                         
                         } else [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];
-  
     
                     }
                         

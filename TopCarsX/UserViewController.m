@@ -7,7 +7,7 @@
 
 #import "UserViewController.h"
 #import "CarsTableViewController.h"
-#import <WebKit/WebKit.h>
+#import <WebKit/WebKit.h>// to incorporate web content
 
 @interface UserViewController ()
 @property(strong,nonatomic) WKWebView *webView;
@@ -21,30 +21,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //Adjust the size of the scrollview
+    //Adjust the size of the embedded scrollview
     _UserScrollView.contentSize = CGSizeMake(317, 950);
     
-//    _webView.navigationDelegate = self;
-//    _webView.uiDelegate = self;
+//    _UserScrollView.frame = CGRectMake(0,0,950,950);
+//    _UserScrollView.contentSize = CGSizeMake(_UserScrollView.frame.size.width, _UserScrollView.frame.size.height);
+//
     
-//setDelegate:self];
-//    [navigationDelegate] = [self webView];
-    
-
 
 }
 
+//-(void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    [[self UserScrollView] layoutIfNeeded];
+////    _UserScrollView.contentSize =_UserContentView.bounds.size;
+//}
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 // Will be called when system determines that the amount of available memory is low
 - (void)didReceiveMemoryWarning {
@@ -52,16 +44,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)loginButton:(id)sender {
 
 }
 
+// Set hardcoded strings to a NSString variables
 NSString *firstName = @"Joe";
 NSString *lastName = @"Smith";
 NSString *email = @"Joe@gmail.com";
 NSString *password = @"12345678";
 
+
+// check of empty value
 - (BOOL) emptyValue {
     
     BOOL isEmpty = YES;
@@ -73,25 +67,24 @@ NSString *password = @"12345678";
     return isEmpty;
 }
 
-
-
-
-
-// string comparison for lowercase letters
-- (BOOL) caseSensitive {
+// String comparison for lowercase letters
+- (BOOL) caseInSensitive {
     
-    BOOL isCaseSensitive = YES;
+    BOOL isCaseInSensitive = YES;
         if ([[[self emailTextField] text] caseInsensitiveCompare:email] == NSOrderedSame){
-            isCaseSensitive = YES;
+            isCaseInSensitive = YES;
         
-        } else isCaseSensitive = NO;
+        } else isCaseInSensitive = NO;
     
-    return isCaseSensitive;
+    return isCaseInSensitive;
 }
 
+
+/* Get the new view controller using [segue destinationViewController].
+ Pass the selected object to the new view controller.
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
     
     _user = [[User  alloc] init];
     
@@ -101,10 +94,12 @@ NSString *password = @"12345678";
         [[self user] setPassword: password];
         [[self user] setPhoto:[UIImage imageNamed:@"userPhoto"]];
 
-    if ([[segue destinationViewController] isKindOfClass:[ CarsTableViewController class]] && ([self caseSensitive]==TRUE) && [[[self passwordTextField] text] isEqualToString: password]) {
+        // Email and password are correct and navigate to CarstableViewController(Homescreen)
+    if ([[segue destinationViewController] isKindOfClass:[ CarsTableViewController class]] && ([self caseInSensitive]==TRUE) && [[[self passwordTextField] text] isEqualToString: password]) {
         CarsTableViewController* carsTableViewController = [segue destinationViewController ];
         [carsTableViewController setUser:_user];
         
+        // Email and password are incorrect
     } else if (((![[[self emailTextField] text] isEqualToString: email]) || (![[[self passwordTextField] text] isEqualToString: password])) && ([self emptyValue] != TRUE)) {
         
         UIAlertController* alert = [[UIAlertController alloc] init];
@@ -122,6 +117,7 @@ NSString *password = @"12345678";
 
         [self presentViewController:alert animated:YES completion:nil];
          
+        // Will be triggered once the emailtexfield or passwordfield is emtpy
     } else if ([self emptyValue] == TRUE) {
         
         UIAlertController* alert = [[UIAlertController alloc] init];
@@ -138,7 +134,6 @@ NSString *password = @"12345678";
         [alert addAction:dismiss];
 
         [self presentViewController:alert animated:YES completion:nil];
-         
     }
 }
 
@@ -152,11 +147,13 @@ NSString *password = @"12345678";
     }
 }
 
-
+// Function to be called to navigate in Google sign in page
 -(void) googleLogin {
     NSString *urlString;
     urlString = @"https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin";
     NSURL *url = [NSURL URLWithString:urlString];
+    
+    // Represents about the information of the object and encapsulates the load request property for the URL and the policies will be used for it
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     _webView = [[WKWebView alloc] initWithFrame:self.view.frame];
@@ -165,10 +162,7 @@ NSString *password = @"12345678";
 
     //[self.view addSubview:_webView] ;
     //[self.view sendSubviewToBack:_webView];
-    
-    //[self.view willMoveToWindow:_webView] ;
-    
-    
+        
     UIAlertController* alert = [[UIAlertController alloc] init];
     
     
@@ -184,12 +178,10 @@ NSString *password = @"12345678";
     // Add action to alert
     [alert addAction:dismissAction];
     
-
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
-
+// Verify loading of google sign in page
 - (BOOL)webView:(WKWebView*)webView
 shouldStartLoadWithRequest:(NSURLRequest*)request
                                     navigationType:(UIWebViewNavigationType)navigationType {
@@ -206,22 +198,17 @@ shouldStartLoadWithRequest:(NSURLRequest*)request
         }
         return YES;
     }
+
+// Function to stop webView loading screen
 -(void)stopLoading{
     [_webView removeFromSuperview];
 }
 
-
-
-
+// Action button to sign in via google account
 - (IBAction)didPressGoogleLogin:(id)sender {
     [self googleLogin];
     NSLog(@"Login");
     
 }
-
-
-
-
-
 
 @end
