@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _carScrollViewController.contentSize = CGSizeMake(317, 950);
+    _carScrollViewController.contentSize = CGSizeMake(317, 730);
     
     _carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
     

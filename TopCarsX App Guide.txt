@@ -1,0 +1,77 @@
+TopCarsX application guide
+
+//Email Authentication
+username = joe@gmail.com
+password = 12345678
+
+// Bug fixed since first launch of prototype from assessment 2
+Fully workable screens both in Potrait and Landscape mode
+
+// Added features
+a. Generate QR code
+b. Play Video ferature
+
+// The following are the list of Car IDs to be searched.
+a. PMvf69adzRfgzhMW514R
+b. R2NvX1TK42lTgMwHDEwE
+c. Zew96migP70riothsHla
+d. b1fPMmrp3ZtrStJa589M
+e. uaDe04ZSzxuB6gbiqEii
+	
+// The following are the list of Car models to be searched.
+a. Artura
+b. M4 Competition Convertible
+c. 296 GTB Coupe
+d. 220i M Sport Coupe
+e. Vantage F1 Coupe
+
+// The following are the list of Extra Car models which is safe to delete or you can add cars and delete on your preference
+Make = Mercedes 
+Model = MG120
+
+// Images for generated QR codes can be viewed also directly from the list below
+a. vantage = https://gdurl.com/wkTX
+b. mc20 = https://gdurl.com/vBoc
+c. m4 = https://gdurl.com/8BLt
+d. huracan = https://gdurl.com/0irq
+e. GR86 = https://gdurl.com/rsl5
+f. emira = https://gdurl.com/7bYH
+g. artura = https://gdurl.com/gNMy
+h. 911 = https://gdurl.com/mqp1
+i. 220i = https://gdurl.com/kv2g
+j. 296 = https://gdurl.com/aMNz
+
+// Due to limited space of firebase firestorage, I've uploaded two sample videos to be played which are Artura and Emira. 
+
+a. Emira
+https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/video%2FEmiraVid.mp4?alt=media&token=34d85828-b7c1-4b79-b6b4-a30bd78e0d25
+
+b. Artura
+https://firebasestorage.googleapis.com/v0/b/topcarsx-903d5.appspot.com/o/video%2FArturaVid.mp4?alt=media&token=8afc5367-b8d7-477c-8391-67ba6617467a
+
+GitHub link:
+https://github.com/michaelbenedictbautista/TopCarsX.git
+
+Enjoy the TopCarsX!!!
+Thank you in advance.
+
+
+*Final zip folder // done
+
+*ATopCarsX App guide // done
+
+*Screenshot JPG/png // done
+4 inches x 3 = ipod touch 7thgen 4" //done
+4.7 inches x 3 = iphone se 3rd gen 4.7" //done
+5.5 inches x 3 =  iphone 12 mini 5.42" // done
+Ipad  x 3 = 9th gen 10.2" // done
+Ipad Pro x 3 = 12.9inches // done
+
+*AppIcon // done
+
+
+Developed by:
+8926 Michael Bautista
+
+
+

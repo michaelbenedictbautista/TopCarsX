@@ -37,6 +37,7 @@
     // This will be executed in separate thread
     [carViewController findAll:^(NSMutableDictionary * _Nonnull dictionary) {
         if (dictionary != nil) {
+            self->_carsDictionary = [[NSMutableDictionary alloc] initWithCapacity:4];
             for (NSString * key in dictionary) {
                 [[self carsDictionary] setObject:[dictionary objectForKey:key] forKey:key];
             }

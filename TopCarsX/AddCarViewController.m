@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _addScrollView.contentSize = CGSizeMake(317, 2000);
+    _addScrollView.contentSize = CGSizeMake(317, 1200);
     
     self.firestore = [FIRFirestore firestore];
     

@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view.
     
     //Adjust the size of the embedded scrollview
-    _UserScrollView.contentSize = CGSizeMake(317, 950);
+    _UserScrollView.contentSize = CGSizeMake(317, 630);
     
 //    _UserScrollView.frame = CGRectMake(0,0,950,950);
 //    _UserScrollView.contentSize = CGSizeMake(_UserScrollView.frame.size.width, _UserScrollView.frame.size.height);
