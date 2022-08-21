@@ -74,6 +74,9 @@
             
         }
     }];
+    
+    
+    
 }
 
 // Validation of every field
@@ -346,6 +349,19 @@
     return YES;
 }
 
+//- (BOOL) caseInSensitive {
+//    Car * car = [[Car alloc]init];
+//    
+//    BOOL isCaseInSensitive = YES;
+//        if ([[[self modelTextField] text] caseInsensitiveCompare: @"GR86"] == NSOrderedSame ) {
+//            isCaseInSensitive = YES;
+//        
+//        } else isCaseInSensitive = NO;
+//    
+//    return isCaseInSensitive;
+//}
+
+
 // Action button to display search car by model
 - (IBAction)didPressSearcByCarModel:(id)sender {
     
@@ -397,35 +413,35 @@
                         FIRCollectionReference *carsCollectionRef = [[self firestore] collectionWithPath: @"SportsCars"];
                         
                         
-                        if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"GR86"] && [model isEqual:@"GR86"]){
+                        if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"GR86"] && [model isEqualToString:@"GR86"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"GR86Img"]];
 
 
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Artura"] && [model isEqual:@"Artura"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Artura"] && [model isEqualToString:@"Artura"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"ArturaImg"]];
                             
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"296 GTB Coupe"] && [model isEqual:@"296 GTB Coupe"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"296 GTB Coupe"] && [model isEqualToString:@"296 GTB Coupe"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"296Img"]];
                             
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"296 GTB Coupe"] && [model isEqual:@"220i M Sport Coupe"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"296 GTB Coupe"] && [model isEqualToString:@"220i M Sport Coupe"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"220iImg"]];
                         
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Vantage F1 Coupe"] && [model isEqual:@"Vantage F1 Coupe"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Vantage F1 Coupe"] && [model isEqualToString:@"Vantage F1 Coupe"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"VantageImg"]];
                             
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"911 Carrera GTS Coupe"] && [model isEqual:@"911 Carrera GTS Coupe"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"911 Carrera GTS Coupe"] && [model isEqualToString:@"911 Carrera GTS Coupe"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"911Img"]];
                             
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Huracan"] && [model isEqual:@"Huracan"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Huracan"] && [model isEqualToString:@"Huracan"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"HuracanImg"]];
                         
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"MC20 Coupe"] && [model isEqual:@"MC20 Coupe"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"MC20 Coupe"] && [model isEqualToString:@"MC20 Coupe"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"MC20Img"]];
                             
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Emira"] && [model isEqual:@"Emira"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"Emira"] && [model isEqualToString:@"Emira"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"EmiraImg"]];
                             
-                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"M4 Competition Convertible"] && [model isEqual:@"M4 Competition Convertible"]){
+                        } else if ([carsCollectionRef queryWhereField:@"model" isEqualTo:@"M4 Competition Convertible"] && [model isEqualToString:@"M4 Competition Convertible"]){
                             [[self photoImageView] setImage:[UIImage imageNamed:@"M4Img"]];
                         
                         } else [[self photoImageView] setImage:[UIImage imageNamed:@"carDefault"]];

@@ -17,11 +17,12 @@
 @property (strong, nonatomic) FIRFirestore *firestore;
 @property (strong, nonatomic) NSMutableDictionary *carsDictionary;
 @property (strong, nonatomic) NSDictionary * carNSDictionary;
-
+@property Car * car;
 
 -(void) findAll: (void(^)(NSMutableDictionary *)) completion;
 
-//-(BOOL) add: (Car*) Car;
+
+-(BOOL) caseInSensitive;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *carScrollViewController;
 
